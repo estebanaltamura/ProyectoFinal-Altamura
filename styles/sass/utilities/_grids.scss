@@ -1,0 +1,272 @@
+/*GRIDS HOME MOBILE*/
+$templateAreaHomeMobile: "portada"
+"titulocolecciones"
+"imagencoleccion1"
+"titulocoleccion1"
+"imagencoleccion2"
+"titulocoleccion2"
+"imagencoleccion3"
+"titulocoleccion3"
+"vacio1"
+"tituloNosotrosPortada"
+"parrafoNosotros1"
+"vacio2"
+"parrafoNosotros2"
+"vacio3"
+"ourCommunity"
+"fotosuso"
+"vacio4"
+"imagenFundacion"
+"vacio5"
+"textoFundacion1"
+"vacio6"
+"textoFundacion2"
+"vacio7";
+
+$templateRowsHomeMobile: auto 100px auto 80px auto 80px auto 80px 0px 40px auto 15px auto 40px 60px auto 40px auto 15px auto 15px auto 40px;
+
+/*GRIDS HOME 768PX*/
+$templateAreaHome768px: "portada portada portada portada"
+"paddingleft titulocolecciones titulocolecciones paddingright"
+"paddingleft imagencoleccion1 imagencoleccion1 paddingright"
+"paddingleft titulocoleccion1 titulocoleccion1 paddingright"
+"paddingleft imagencoleccion2 imagencoleccion2 paddingright"
+"paddingleft titulocoleccion2 titulocoleccion2 paddingright"
+"paddingleft imagencoleccion3 imagencoleccion3 paddingright"
+"paddingleft titulocoleccion3 titulocoleccion3 paddingright"
+"paddingleft vacio1 vacio1 paddingright"
+"paddingleft tituloNosotrosPortada tituloNosotrosPortada paddingright"
+"paddingleft parrafoNosotros1 parrafoNosotros1 paddingright"
+"paddingleft vacio2 vacio2 paddingright"
+"paddingleft parrafoNosotros2 parrafoNosotros2 paddingright"
+"paddingleft vacio3 vacio3 paddingright"
+"paddingleft ourCommunity ourCommunity paddingright"
+"paddingleft fotosuso1 fotosuso2 paddingright"
+"paddingleft fotosuso3 fotosuso4 paddingright"
+"paddingleft vacio5 vacio5 paddingright"
+"paddingleft imagenFundacion textoFundacion1 paddingright"
+"paddingleft imagenFundacion textoFundacion2 paddingright"
+"paddingleft vacio4 vacio4 paddingright";
+
+$templateColumnsHome768px: 15px 1fr 1fr 15px;
+$templateRowsHome768px: auto 100px auto 80px auto 80px auto 80px 0px auto auto 5px auto 40px 60px auto auto 40px auto 70px 50px;
+
+/*GRIDS HOME 992PX*/
+$templateAreaHome992px: "portada portada portada portada portada portada portada portada"
+"paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright"
+"paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 paddingright"
+"paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 paddingright"
+"paddingleft vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 paddingright"
+"paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright"
+"paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright"
+"paddingleft vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 paddingright"
+"paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright"
+"paddingleft vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 paddingright"
+"paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright"
+"paddingleft fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso3 fotosuso3 paddingright"
+"paddingleft fotosuso4 fotosuso4 fotosuso5 fotosuso5 fotosuso6 fotosuso6 paddingright"
+"paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright"
+"paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 paddingright"
+"paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 paddingright"
+"paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright";
+
+$templateColumnsHome992px: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+$templateRowsHome992px: auto 100px auto 40px 40px auto auto 5px auto 20px 60px auto auto 40px auto 70px 50px; 
+
+/*GRIDS HOME 1200PX*/
+$templateAreaHome1200px: "portada portada portada portada portada portada portada portada portada portada portada portada portada portada"
+"paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright"
+"paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 imagencoleccion3 imagencoleccion3 paddingright"
+"paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 titulocoleccion3 titulocoleccion3 paddingright"
+"paddingleft vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 paddingright"
+"paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright"
+"paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright"
+"paddingleft vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 paddingright"
+"paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright"
+"paddingleft vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 paddingright"
+"paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright"
+"paddingleft fotosuso1 fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso2 fotosuso3 fotosuso3 fotosuso3 fotosuso4 fotosuso4 fotosuso4 paddingright"
+"paddingleft fotosuso5 fotosuso5 fotosuso5 fotosuso6 fotosuso6 fotosuso6 fotosuso7 fotosuso7 fotosuso7 fotosuso8 fotosuso8 fotosuso8 paddingright"
+"paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright"
+"paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 paddingright"
+"paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 paddingright"
+"paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright";
+
+$templateColumnsHome1200px: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+$templateRowsHome1200px: auto 100px auto 40px 40px auto auto 5px auto 20px 60px auto auto 40px auto 70px 50px;
+
+/*GRIDS PRODUCTOS MOBILE*/
+$templateAreaProductosMobile: "carrusel" 
+"vacio1"
+"titulo"
+"precio"
+"vacio2"
+"reviews"
+"vacio3"
+"nopesticidas"
+"vacio4"
+"botonATC"
+"vacio5"
+"botonComprar"
+"vacio6"
+"tituloDescripcion"
+"vacio7"
+"descripcion"
+"vacio8";
+
+$templateColumnsProductosMobile: 1fr;
+$templateRowsProductosMobile: auto 30px auto 30px 0px 30px 10px auto 20px 44px 10px 44px 30px 30px 30px auto 30px;
+
+/*GRIDS PRODUCTOS 768PX*/
+$templateAreaProductos768px: "carrusel vacio1"
+"carrusel titulo"
+"carrusel precio"
+"carrusel vacio2"
+"carrusel reviews"
+"carrusel vacio3"
+"carrusel nopesticidas"
+"carrusel vacio4"
+"carrusel botonATC"
+"carrusel vacio5"
+"carrusel botonComprar"
+"vacio6 vacio6"
+"tituloDescripcion tituloDescripcion"
+"vacio7 vacio7"
+"descripcion descripcion"
+"vacio8 vacio8";
+
+$templateColumnsProductos768px: 1fr 1fr;
+$templateRowsProductos768px: 0px 60px 30px 0px 20px 22px auto 22PX 44px 9px 44px 20px 30px 20px auto 30px;
+
+/*GRIDS PRODUCTOS 1200PX*/
+$templateAreaProductos1200px: "carrusel vacio1"
+"carrusel titulo"
+"carrusel precio"
+"carrusel vacio2"
+"carrusel reviews"
+"carrusel vacio3"
+"carrusel nopesticidas"
+"carrusel vacio4"
+"carrusel algo"
+"carrusel vacio5"
+"carrusel botonATC"
+"carrusel vacio6"
+"carrusel botonComprar"
+"vacio7 vacio7"
+"tituloDescripcion tituloDescripcion"
+"vacio8 vacio8"
+"descripcion descripcion"
+"vacio9 vacio9";
+
+$templateColumnsProductos1200px: 1fr 1fr;
+$templateRowsProductos1200px: 0px 60px 30px 0px 20px 30px auto 30PX 100px 22px 54px 20px 54px 20px 30px 20px auto 30px;
+
+
+/*COLECCIONES Y NOVEDADES MOBILE*/
+$templateAreaColeccionesyNovedadesMobile: "titulonovedadescolecciones"
+"card1"
+"card2"
+"card3" 
+"card4"
+"card5" 
+"card6"
+"card7" 
+"card8"
+"card9" 
+"card10"
+"card11"  
+"card12"
+"card13"
+"card14"
+"card15" 
+"card16"
+"vacio1";
+
+$templateColumnsColeccionesyNovedadesMobile: 230px;
+$templateRowsColeccionesyNovedadesMobile: 60px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 50px;
+
+/*COLECCIONES Y NOVEDADES 390*/
+$templateAreaColeccionesyNovedades375px: "titulonovedadescolecciones titulonovedadescolecciones"
+"card1 card2"
+"card3 card4"
+"card5 card6"
+"card7 card8"
+"card9 card10"
+"card11 card12"
+"card13 card14"
+"card15 card16"
+"vacio1 vacio1";
+
+$templateColumnsColeccionesyNovedades375px: 160px 160px;
+$templateRowsColeccionesyNovedades375px: 60px 238px 238px 238px 238px 238px 238px 238px 238px 50px;
+
+
+/*COLECCIONES Y NOVEDADES 768PX*/
+$templateAreaColeccionesyNovedades768px: "titulonovedadescolecciones titulonovedadescolecciones titulonovedadescolecciones"
+"card1 card2 card3"
+"card4 card5 card6"
+"card7 card8 card9"
+"card10 card11 card12"
+"card13 card14 card15"
+"card16 vacio2 vacio2"
+"vacio1 vacio1 vacio1";
+
+$templateColumnsColeccionesyNovedades768px: 185px 185px 185px;
+$templateRowsColeccionesyNovedades768px: 70px 265px 265px 265px 265px 265px 265px 50px;
+
+/*COLECCIONES Y NOVEDADES 1200PX*/
+$templateAreaColeccionesyNovedades1200px: "titulonovedadescolecciones titulonovedadescolecciones titulonovedadescolecciones titulonovedadescolecciones"
+"card1 card2 card3 card4"
+"card5 card6 card7 card8"
+"card9 card10 card11 card12"
+"card13 card14 card15 card16"
+"vacio1 vacio1 vacio1 vacio1";
+$templateColumnsColeccionesyNovedades1200px:210px 210px 210px 210px;
+$templateRowsColeccionesyNovedades1200px: 70px 310px 310px 310px 310px 30px;
+
+/*CARDS SECCION COLECCIONES Y NOVEDADES MOBILE*/
+$templateColumnsCardcoleccionyNovedadesMobile: 1fr; 
+$templateRowsCardcoleccionyNovedadesMobile: 228px 40px 40px;
+
+/*CARDS SECCION COLECCIONES Y NOVEDADES 390*/
+$templateRowsCardcoleccionyNovedades375px: 158px 40px 40px;
+
+/*CARDS SECCION COLECCIONES Y NOVEDADES 768PX*/
+$templateRowsCardcoleccionyNovedades768px: 185px 40px 40px;
+
+/*CARDS SECCION COLECCIONES Y NOVEDADES 1200PX*/
+$templateRowsCardcoleccionyNovedades1200px: 210px 50px 50px;
+
+
+
+
+/*NOSOTROS*/
+$templateAreaNosotros:"tituloNosotros"
+"vacio1"
+"textoNosotros"
+"vacio2"
+"imagenFundadores"
+"vacio3";
+
+$templateRowsNosotros: auto 30px auto 50px auto 50px;
+
+
+/*CONTACTO*/
+$templateAreaContacto: "titulo"
+"vacio1"
+"textoContactUs1"
+"textoContactUs2"
+"textoContactUs3"
+"textoContactUs4"
+"vacio2";
+
+$templateRowsContacto: auto 50px auto auto 30px 30px 50px;
+
+
+/*FOOTER*/
+$templateAreaFooter: "logo"
+"contactenos"
+"mail"
+"twitter";
+
+$templateRowsFooter: 80px 30px 20px 20px;

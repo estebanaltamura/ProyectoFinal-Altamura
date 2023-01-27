@@ -1,0 +1,25 @@
+{
+  "name": "preentrega3altamura",
+  "version": "1.0.0",
+  "description": "Pre entrega 3 coder house esteban altamura comision 36410",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css":"node-sass --include-path scss styles/sass/origen.scss styles/css/styles.css", 
+    "watch-css":"nodemon -e scss -x \"npm run build-css\"" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebanaltamura/preEntrega3Altamura.git"
+  },
+  "author": "Esteban Altamura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estebanaltamura/preEntrega3Altamura/issues"
+  },
+  "homepage": "https://github.com/estebanaltamura/preEntrega3Altamura#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}

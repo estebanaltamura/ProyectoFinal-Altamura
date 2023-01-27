@@ -1,0 +1,24 @@
+/*RESETEO DEL NAVEGADOR*/
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+/*SAAS IF*/
+@if $elementosRedondeados == true {
+.redondeado{
+    border-radius: 4px;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.75);
+}
+}
+
+.carousel-control-prev-icon{
+    background-image: url(../assets/images/iconos-y-logos/icons8-chevron-left-96.png);
+} 
+
+.carousel-control-next-icon{
+    background-image: url(../assets/images/iconos-y-logos/icons8-chevron-right-96.png);
+} 

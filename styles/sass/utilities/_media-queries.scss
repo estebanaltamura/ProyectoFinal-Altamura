@@ -1,0 +1,201 @@
+/*-------------------------------------------------------------------MEDIA QUERIES-----------------------------------------------------------*/
+    @media screen and (max-width: 300px){
+    
+    /*PORTADA HOME*/
+    .logoycarro{
+        display: grid;
+        grid-template-columns: 1fr 37px;
+        grid-template-areas: "none carro";
+        width: calc(50%);
+        padding: 0px;
+        margin:0px;
+    }
+
+    .logo {
+        display: none;
+    }   
+    }
+    
+    @media screen and (min-width: 375px){
+    
+    /*PORTADA HOME*/
+    .portadaMobile {
+        display: none;
+    }
+
+    .portada375{
+        display:flex
+    }
+     /*MEDIA QUERY 1 NEW ARRIVALS Y COLLECTIONS*/
+     .contenedorCards {
+        grid-template-columns: $templateColumnsColeccionesyNovedades375px;
+        grid-template-rows: $templateRowsColeccionesyNovedades375px;
+        grid-template-areas: $templateAreaColeccionesyNovedades375px;
+        gap:15px;
+    }
+    
+    .card {
+        grid-template-rows: $templateRowsCardcoleccionyNovedades375px;
+    }
+    }
+
+    @media screen and (min-width: 576px){
+    /*BARRA SUPERIOR PARA COMUNICAR DESCUENTOS, BENEFICIOS*/
+    .barramensaje {
+        font-size: 16px;
+    }
+    }
+    
+    @media screen and (min-width: 768px){
+    /*BARRA SUPERIOR PARA COMUNICAR DESCUENTOS, BENEFICIOS*/
+    .barramensaje {
+        font-size: 18px;
+    }
+    
+    .carro{
+        grid-area: carro;
+        margin: auto 0;
+        height: 41px;
+        
+    }
+    
+    /*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+    .contenedorMain {
+        grid-template-columns: $templateColumnsHome768px;
+        grid-template-rows: $templateRowsHome768px;
+        padding: 0;
+        gap: 10px;
+        grid-template-areas: $templateAreaHome768px;
+    }
+    
+    .portadaMobile, .portada375, .sliderFotosdeUso {
+        display: none;
+    }
+    
+    .portadaDesktop{
+        display: flex;
+    }
+    
+    /*SAAS FOR*/
+    @for $i from 1 through 4{
+        .fotosdeUso#{$i}{
+            display:flex;
+            width:100%;
+        }
+    }
+    
+    /*MEDIA QUERY 2 NEW ARRIVALS Y COLLECTIONS*/
+    .contenedorCards {
+        grid-template-columns: $templateColumnsColeccionesyNovedades768px;
+        grid-template-rows: $templateRowsColeccionesyNovedades768px;
+        grid-template-areas: $templateAreaColeccionesyNovedades768px;
+        width: 715px;
+        gap:60px;
+    }
+    
+    .card {
+        grid-template-rows: $templateRowsCardcoleccionyNovedades768px;
+    }
+    
+    /*PRODUCTOS*/
+    .containerGridsProduct{
+        max-width: none;
+        width:768px;
+        overflow:hidden;
+        grid-template-columns: $templateColumnsProductos768px;
+        grid-template-rows: $templateRowsProductos768px;
+        grid-template-areas: $templateAreaProductos768px;
+    }
+    
+    .titulo, .precio, .reviews{
+        padding: 0 20PX;
+    }
+    
+    .noPesticidas{
+        width: 100%;
+    }
+    .botonATC, .botonComprar{
+        width: calc(100% - 40px);
+    }
+    
+    .descripcion{
+        font-size: 22px;
+    }
+    }
+    
+    @media screen and (min-width: 992px){
+    /*MEDIA QUERY 3 DE HOME*/
+    .logoycarro{
+        padding-right: 100px;
+        display: flex;
+        width: 156px;
+        padding: 0px;
+        margin:0px;
+    }
+    
+    .carro{
+        display:none
+    }
+    
+    .carroDesktop{
+        display: flex;
+        width:42px;
+    }
+    
+    /*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+    .contenedorMain {
+        grid-template-columns: $templateColumnsHome992px;
+        grid-template-rows: $templateRowsHome992px;
+        gap: 10px;
+        grid-template-areas: $templateAreaHome992px;
+    }
+    
+    .portadaTablet {
+        display: none;
+    }
+    
+    .portadaDesktop, .fotosdeUso5, .fotosdeUso6 {
+        display:flex;
+    }
+      
+    }
+    
+    @media screen and (min-width: 1200px){
+    /*MEDIA QUERY 4 DE HOME*/    
+    /*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+              
+    .contenedorMain {
+        max-width: 1200px;
+        grid-template-columns: $templateColumnsHome1200px;
+        grid-template-rows: $templateRowsHome1200px;
+        gap: 10px;
+        grid-template-areas: $templateAreaHome1200px;
+    }
+    
+    .fotosdeUso7, .fotosdeUso8{
+        display:flex;
+    }
+            
+    /*MEDIA QUERY 3 NEW ARRIVALS Y COLLECTIONS*/
+    .contenedorCards {
+        grid-template-columns:$templateColumnsColeccionesyNovedades1200px;
+        grid-template-rows: $templateRowsColeccionesyNovedades1200px;
+        grid-template-areas: $templateAreaColeccionesyNovedades1200px;
+        width: 1060px;
+        gap:60px;
+    }
+        
+    .card {
+        grid-template-rows: $templateRowsCardcoleccionyNovedades1200px;
+    }
+    
+    /*PRODUCTOS*/
+    .containerGridsProduct{
+        max-width: none;
+        width:1200px;
+        overflow:hidden;
+        grid-template-columns: $templateColumnsProductos1200px;
+        grid-template-rows: $templateRowsProductos1200px;
+        grid-template-areas: $templateAreaProductos1200px;
+    }
+    }

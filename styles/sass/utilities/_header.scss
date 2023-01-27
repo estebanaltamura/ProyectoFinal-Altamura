@@ -1,0 +1,79 @@
+/*HEADER ------------------------------------------------------------------------------------------------*/
+
+/*BARRA SUPERIOR PARA COMUNICAR DESCUENTOS, BENEFICIOS*/
+.barramensaje {
+    z-index: 2;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*SAAS NESTING*/
+/*MENU RESPONSIVE*/
+.navbar{
+    z-index: 2;
+    display: flex;
+    position: fixed;
+    width:100%;
+    top:45px;
+    padding: 0px;
+    background-color: white;
+    .container-fluid{
+        margin: 0 15px;
+        padding:0;
+        width: 100%;
+        background-color: #fcfcfc;
+    }
+}    
+
+
+
+.logoycarro{
+    display: grid;
+    grid-template-columns: 126px 1fr 37px;
+    grid-template-areas: "logo none carro";
+    width: calc(50% + 63px);
+    padding: 0px;
+    margin:0px;
+}
+
+.logo{
+    grid-area: logo;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    font-size: 26px;
+    color:black;
+    font-weight: 700;
+    height: 50px;
+    width:126Px;
+}
+
+.carro{
+    grid-area: carro;
+    margin: auto 0;
+    height: 37px;
+    
+}
+
+.carroDesktop{
+    display:none;
+}
+
+.active{
+    font-weight: 700;
+}
+
+a:hover{
+    background-color: rgba(202, 202, 202, 0.2);
+}
+

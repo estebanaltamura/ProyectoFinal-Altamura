@@ -1,0 +1,344 @@
+
+/*MAIN---------------------------------------------------------------------------------------------------------------*/
+
+/*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+/*SAAS MIXIN*/
+.contenedorMain {
+    @include setupGrillas(grid, relative, 100%, 95px);
+    margin: 0 auto;
+    padding: 0 15px;
+    grid-template-rows: $templateRowsHomeMobile;
+    gap: none;
+    grid-template-areas: $templateAreaHomeMobile;
+
+}
+
+/*SAAS EACH DE UN MAP*/
+@each $class, $area in $elementosHomeMobile{
+    .#{$class}{
+        grid-area: #{$area}
+    }
+}
+
+.portadaMobile {
+    display: flex;
+    width: 100%;
+}
+
+.portadaTablet, .portada375, .portadaDesktop {
+    display:none;
+    width: 100%;   
+}
+
+
+
+.titulocolecciones {
+    font-size: 40px;
+    text-align: center;
+    margin: 40px auto;
+}
+  
+.coleccionesImagenes{
+    width: 100%;
+    max-width: 450px;
+    margin:auto;
+}
+
+.coleccionesTexto{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:10px;
+    font-size: 24px;
+}
+
+.coleccionesTexto:visited{
+    color:black;
+}
+
+.tituloNosotrosPortada{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.parrafoNosotros{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.ourCommunity{
+    margin: auto;
+}
+
+.sliderFotosdeUso {
+    display:flex;
+    font-size: 24px;
+    width:100%;
+}
+
+/*SAAS FOR*/
+@for $i from 1 through 8{
+.fotosdeUso#{$i}{
+    display:none;
+    width:100%;
+}
+}
+
+.imagenFundacion{
+    display:block;
+    margin:auto;
+    font-size: 24px;
+    width: 250px;
+}
+
+.textoFundacion1, .textoFundacion2 {
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/*PAGINA PRODUCTO--------------------------------------------------------------------------------*/
+/*SAAS MIXIN*/
+.containerGridsProduct{
+    @include setupGrillas(grid, relative, 100%, 95px);
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 480px;
+    grid-template-columns: $templateColumnsProductosMobile;
+    grid-template-rows: $templateRowsProductosMobile;
+    grid-template-areas: $templateAreaProductosMobile;
+}
+
+h2, p{
+    padding: 0;
+    margin: 0;
+}
+
+.carrusel{
+    grid-area: carrusel;
+}
+
+.titulo{
+    font-size: 22px;
+    grid-area: titulo;
+}
+.precio{
+    font-size: 20px;
+    grid-area: precio;
+}
+.reviews{
+    grid-area: reviews;
+}
+
+.noPesticidas{
+    width:100%;
+    margin:0 auto;
+    grid-area: nopesticidas;
+}
+.botonATC, .botonComprar{
+    width:100%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500px;
+    border-radius: 18px;
+    border: none;
+    
+}
+
+.botonATC{
+    background-color: white;
+    color: black;
+    border: 2px solid #68634b;
+    grid-area: botonATC;
+}
+
+.botonComprar{
+    border: 2px solid #68634b;
+    background-color: #68634b;
+    color: white;
+    grid-area: botonComprar;
+}
+
+.tituloDescripcion{
+    margin:0 auto;
+    grid-area: tituloDescripcion;
+}
+
+.descripcion{
+    font-family: source sans pro;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: justify;
+    grid-area: descripcion;
+}
+
+
+/*PAGINA NOVEDADES Y COLECCIONES ------------------------------------------------------------*/
+
+.contenedorCards {
+    display: grid;
+    position: relative;
+    top: 95px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+    grid-template-columns: $templateColumnsColeccionesyNovedadesMobile;
+    grid-template-rows: $templateRowsColeccionesyNovedadesMobile;
+    grid-template-areas: $templateAreaColeccionesyNovedadesMobile;
+}
+
+
+
+.titulonovedadescolecciones {
+    grid-area: titulonovedadescolecciones;
+    margin: auto;
+}
+
+.tituloCard{
+    font-size: 18px;
+    margin:auto;
+}
+
+.precioCard{
+    font-size: 15px;
+    margin:auto;
+}
+
+.imagenCard{
+    width:100%;
+}
+
+.card {
+    display: grid;
+    width:100%;
+    border: 1px solid black;
+    border-radius: 4px;  
+    text-decoration: none;
+    color: black;
+    margin:auto;  
+    box-shadow: 1px 0px 4px 0px black;
+    grid-template-columns: $templateColumnsCardcoleccionyNovedadesMobile;
+    grid-template-rows: $templateRowsCardcoleccionyNovedadesMobile;
+    
+    /*SAAS USO DE &*/
+    &:visited{
+        color:black;
+    }
+    
+    &:active{
+        color:black;
+    }
+
+    &:hover{
+        color:black;
+    }
+
+}
+
+/*SAAS FOR*/
+@for $i from 1 through 16{
+    .card#{$i}{
+        grid-template-areas: "foto#{$i}"
+                            "titulo#{$i}"   
+                            "precio#{$i}";
+        grid-area: card#{$i};
+    }
+} 
+
+/*SAAS FOR*/
+@for $i from 1 through 16{
+.imagenCard#{$i}{
+    grid-area: foto#{$i};
+}
+}
+
+/*SAAS FOR*/
+@for $i from 1 through 16{
+.tituloCard#{$i}{
+    grid-area: titulo#{$i};
+}
+}
+
+/*SAAS FOR*/
+@for $i from 1 through 16{
+.precioCard#{$i}{
+    grid-area: precio#{$i};
+}
+}
+
+
+/*PAGINA NOSOTROS------------------------------------------------------------------------------------------*/
+/*SAAS MIXIN*/
+.mainNosotros {
+    @include setupGrillas(grid, relative, 100%, 95px);
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-rows: $templateRowsNosotros;
+    grid-template-areas: $templateAreaNosotros;
+}
+
+.tituloNosotros {
+    margin: auto;
+    overflow: hidden;
+    grid-area: tituloNosotros;
+    font-size: 30px;
+}
+
+.textoNosotros {
+    margin: auto;
+    font-size: 18px;
+    text-align: justify;
+    grid-area: textoNosotros;
+}
+
+.imagenFundadores {
+    width:100%;
+    margin: 0 auto;
+    max-width: 700px;
+    grid-area: imagenFundadores;
+}
+
+/*PAGINA CONTACTO-------------------------------------------------------------------------------------------------*/
+/*SAAS MIXIN*/
+.mainContacto{
+    @include setupGrillas(grid, relative, 100%, 95px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    grid-template-rows: $templateRowsContacto;
+    grid-template-areas: $templateAreaContacto;
+}
+
+.tituloContacto{
+    margin: auto;
+    overflow: hidden;
+    font-size: 30px;
+    grid-area: titulo;
+}
+
+.textoContacto1, .textoContacto2, .textoContacto3, .textoContacto4{
+    text-align: left;
+    font-size: 18px;
+    text-align: justify;
+    grid-area: texto;
+    font-family: raleway ;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+/*SAAS FOR*/
+@for $i from 1 through 4{
+    .textoContacto#{$i}{
+        grid-area:textoContactUs#{$i};
+    }
+}
