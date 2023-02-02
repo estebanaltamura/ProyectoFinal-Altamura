@@ -49,7 +49,7 @@ contenedorCards.addEventListener("click",(e)=>{
                 }
             )
         )
-        window.location.href = `../../pages/producto.html` 
+        window.location.href = `../pages/producto.html` 
     }
 })
 
