@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 }) 
 
 seguirComprandoButton.addEventListener("click",()=>{
-    history.back()
+    history.go(-2)
 })
 
 
