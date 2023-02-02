@@ -6,7 +6,7 @@ coleccionAlpinismo:
             id:101,
             nombre: "Aether 55L",
             precio: 22600,
-            imagen:"../../assets/images/cards-colecciones/linea-alpinismo/aether55.jpg"
+            imagen:"../assets/images/cards-colecciones/linea-alpinismo/aether55.jpg"
             
         },
         {
