@@ -3,8 +3,22 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    user-select: none;
 }
 
+a {
+    text-decoration-line: none;
+    color: black;
+    cursor: pointer;
+}
+
+a:active {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
 
 
 /*SAAS IF*/
