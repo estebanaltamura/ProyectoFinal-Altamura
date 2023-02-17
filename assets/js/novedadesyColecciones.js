@@ -1,15 +1,24 @@
-import {fetchData} from "./getDataModule.js"
+import {getProducts} from "./getDataModule.js"
 import {novedadesyColeccionesPrinting} from "./novedadesyColeccionesPrinting.js"
 
 const contenedorCards = document.getElementById("contenedorCards")
-
+const loadingIcon = document.getElementById("loadingIcon")
+console.log(loadingIcon)
 let coleccion
 
 document.addEventListener("DOMContentLoaded", (e)=>{
     const colectionName = getColectionName(e)
-    const productosByColeccion = fetchData(colectionName)
-    coleccion = productosByColeccion
-    novedadesyColeccionesPrinting(productosByColeccion)
+
+    const getData = async (colectionName)=>{
+        const products = await getProducts()
+        loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
+        const productosByColeccion = products[colectionName]
+        coleccion = productosByColeccion
+        novedadesyColeccionesPrinting(productosByColeccion)
+    } 
+
+    getData(colectionName)
+    
 }) 
 
 const getColectionName = (e)=> {
@@ -36,7 +45,7 @@ contenedorCards.addEventListener("click",(e)=>{
     if (getIdEnlaceCliqueado(e)){
 
         const producto = getProducto(getIdEnlaceCliqueado(e))[0]
-        console.log(producto)
+        
         localStorage.setItem(
             "infoToProductPage",
             JSON.stringify(

@@ -110,9 +110,6 @@ a:hover {
 .active {
   font-weight: 700; }
 
-a:hover {
-  background-color: rgba(202, 202, 202, 0.2); }
-
 /*FOOTER*/
 .footer {
   display: grid;
@@ -123,7 +120,8 @@ a:hover {
   top: 90px;
   height: 170px;
   width: 100%;
-  background-color: black; }
+  background-color: black;
+  margin-top: 65px; }
 
 .logoFooter {
   margin: auto auto;
@@ -424,6 +422,15 @@ h2, p {
   grid-template-rows: 60px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 308px 50px;
   grid-template-areas: "titulonovedadescolecciones" "card1" "card2" "card3" "card4" "card5" "card6" "card7" "card8" "card9" "card10" "card11" "card12" "card13" "card14" "card15" "card16" "vacio1"; }
 
+.loadingIcon {
+  position: absolute !important;
+  width: 50px !important;
+  right: calc(50% - 25px);
+  top: 50vh; }
+
+.loadingIconOff {
+  display: none; }
+
 .titulonovedadescolecciones {
   grid-area: titulonovedadescolecciones;
   margin: auto; }
@@ -702,115 +709,6 @@ h2, p {
   max-width: 700px;
   grid-area: imagenFundadores; }
 
-/*PAGINA CARRO-------------------------------------------------------------------------------------------------*/
-.contenedorItems {
-  position: relative;
-  display: flex;
-  top: 95px;
-  padding: 15px 15px 0 15px;
-  margin: 30px 15px;
-  min-width: 340px;
-  max-width: 1050px;
-  height: fit-content;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border: 1px solid black; }
-
-.contenedorItemsOff {
-  display: none; }
-
-.itemHeader {
-  display: grid;
-  width: 100%;
-  height: 30px;
-  grid-template-columns: 25% 25% 1fr 1fr 1fr;
-  grid-template-rows: 30px;
-  grid-template-areas: "vacio productHeaderCart priceHeaderCart quantityHeaderCart subTotalHeaderCart";
-  border-bottom: 3px solid black;
-  text-align: center;
-  font-size: 12px; }
-
-.productHeaderCart {
-  grid-area: productHeaderCart; }
-
-.priceHeaderCart {
-  grid-area: priceHeaderCart; }
-
-.quantityHeaderCart {
-  grid-area: quantityHeaderCart; }
-
-.subTotalHeaderCart {
-  grid-area: subTotalHeaderCart; }
-
-.item {
-  display: grid;
-  width: 100%;
-  height: fit-content;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 25% 25% 1fr 1fr 1fr;
-  grid-template-rows: 136px;
-  grid-template-areas: "imagenCartItem tituloCartItem priceCartItem quantityCartItem subTotalCartItem";
-  border-bottom: 2px solid black;
-  text-align: center; }
-
-.imagenCartItem {
-  grid-area: imagenCartItem;
-  margin: 0 auto;
-  width: 120px; }
-
-.tituloCartItem {
-  grid-area: tituloCartItem; }
-
-.priceCartItem {
-  grid-area: priceCartItem; }
-
-.quantityCartItem {
-  grid-area: quantityCartItem; }
-
-.subTotalCartItem {
-  grid-area: subTotalCartItem; }
-
-.totalCartContainer {
-  display: grid;
-  justify-content: flex-end;
-  text-align: center;
-  align-items: center;
-  grid-template-columns: 25% 25% 1fr 1fr 1fr;
-  grid-template-rows: 50px;
-  grid-template-areas: "vacio vacio vacio totalCartTitle totalCartNumber"; }
-
-.totalCartTitle {
-  grid-area: totalCartTitle;
-  font-size: 22px;
-  font-style: italic;
-  font-weight: 700; }
-
-.totalCartNumber {
-  grid-area: totalCartNumber; }
-
-.seguirComprandoButton {
-  position: relative;
-  display: flex;
-  margin: 0 auto 30px auto;
-  align-items: center;
-  justify-content: center;
-  top: 95px;
-  width: 250px;
-  height: 54px;
-  border: 1px solid black; }
-
-.seguirComprandoButtonSinItems {
-  position: relative;
-  display: flex;
-  margin: 50px auto 30px auto;
-  align-items: center;
-  justify-content: center;
-  top: 95px;
-  width: 250px;
-  height: 54px;
-  border: 1px solid black; }
-
 /*PAGINA CONTACTO-------------------------------------------------------------------------------------------------*/
 /*SAAS MIXIN*/
 .mainContacto {
@@ -851,6 +749,184 @@ h2, p {
 
 .textoContacto4 {
   grid-area: textoContactUs4; }
+
+/*PAGINA CARRO-------------------------------------------------------------------------------------------------*/
+.contenedorItems {
+  position: relative;
+  display: flex;
+  top: 95px;
+  padding: 10px 10px 0 10px;
+  margin: 30px auto 15px auto;
+  width: calc(100% - 30px);
+  min-width: 738px;
+  max-width: 1050px;
+  height: fit-content;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 1px solid black; }
+
+.contenedorItemsOff {
+  display: none; }
+
+.itemHeader {
+  display: grid;
+  width: 100%;
+  height: 50px;
+  grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
+  grid-template-rows: 50px;
+  grid-template-areas: "vacio productNameHeaderCart priceHeaderCart quantityHeaderCart quantityHeaderModifier subTotalHeaderCart eliminarItemHeader";
+  border-bottom: 3px solid black;
+  text-align: center;
+  align-items: center;
+  font-size: 15px; }
+
+.productNameHeaderCart {
+  grid-area: productNameHeaderCart; }
+
+.priceHeaderCart {
+  grid-area: priceHeaderCart; }
+
+.quantityHeaderCart {
+  grid-area: quantityHeaderCart; }
+
+.subTotalHeaderCart {
+  grid-area: subTotalHeaderCart; }
+
+.item {
+  display: grid;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
+  grid-template-rows: 68px 68px;
+  grid-template-areas: "imagenCartItem tituloCartItem priceCartItem quantityCartItem moreQuantity subTotalCartItem removeItemIcon" "imagenCartItem tituloCartItem priceCartItem quantityCartItem minusQuantity subTotalCartItem removeItemIcon";
+  border-bottom: 2px solid black;
+  text-align: center;
+  font-size: 16px; }
+
+.imagenCartItem {
+  grid-area: imagenCartItem;
+  justify-content: flex-start;
+  width: 120px; }
+
+.tituloCartItem {
+  grid-area: tituloCartItem; }
+
+.priceCartItem {
+  grid-area: priceCartItem; }
+
+.quantityCartItem {
+  grid-area: quantityCartItem; }
+
+.moreQuantityIcon {
+  grid-area: moreQuantity;
+  cursor: pointer;
+  margin: auto auto 13px auto;
+  width: 30px;
+  height: 25px; }
+
+.lessQuantityIcon {
+  grid-area: minusQuantity;
+  cursor: pointer;
+  margin: 13px auto auto auto;
+  width: 30px;
+  height: 25px; }
+
+.subTotalCartItem {
+  grid-area: subTotalCartItem; }
+
+.removeIcon {
+  grid-area: removeItemIcon;
+  cursor: pointer;
+  margin: auto auto auto 0;
+  width: 33px; }
+
+.totalCartContainer {
+  display: grid;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+  grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
+  grid-template-rows: 50px;
+  grid-template-areas: "vacio vacio vacio vacio totalCartTitle totalCartNumber vacio1"; }
+
+.totalCartTitle {
+  grid-area: totalCartTitle;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700; }
+
+.totalCartNumber {
+  grid-area: totalCartNumber;
+  font-weight: 700;
+  font-size: 18px; }
+
+.botonesCarro {
+  position: relative;
+  display: flex;
+  margin: 0 auto 15px auto;
+  align-items: center;
+  justify-content: center;
+  top: 95px;
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+  font-family: montserrat,sans-serif,Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 #fff; }
+
+.botonesCarro:hover {
+  color: white; }
+
+.pagarConMPButtonOff {
+  display: none; }
+
+.pagarConMPButton {
+  background-color: #009EE3;
+  margin-top: 40px; }
+
+.mercadopagoicono {
+  margin-right: 15px;
+  width: 50px; }
+
+.seguirComprandoButtonConItems {
+  background-color: #000000;
+  margin-top: 0px; }
+
+.seguirComprandoButtonSinItems {
+  background-color: #000000;
+  margin-top: 50px; }
+
+/*PAGINA PAGO-------------------------------------------------------------------------------------------------*/
+.muestraObjetoParaApiMercadoPago {
+  display: grid;
+  position: relative;
+  top: 95px;
+  margin: 30px auto 30px auto;
+  width: 800px;
+  height: auto;
+  border: 1px solid black;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px auto;
+  grid-template-areas: "titulo" "body";
+  font-family: montserrat,sans-serif, helvetica;
+  text-align: center;
+  line-height: 2;
+  align-items: center; }
+
+.tituloParaspanInfoParaMp {
+  font-weight: 700; }
+
+.pagoSeguirComprando {
+  border: 1px solid black;
+  color: black; }
+
+.pagoSeguirComprando:hover {
+  color: black; }
 
 /*-------------------------------------------------------------------MEDIA QUERIES-----------------------------------------------------------*/
 @media screen and (max-width: 300px) {

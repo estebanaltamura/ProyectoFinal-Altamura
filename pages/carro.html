@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/css/styles.css">
     <title>Document</title>
@@ -18,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="logoycarro">
-                    <h1 class="logo">PANDORA</h1>
+                    <a href="../index.html" class="logo"><h1 class="logo">PANDORA</h1></a> 
                     <img class="carro" src="../assets/images/iconos-y-logos/carro.png" alt="Icono del carro de compras. Clickeando lleva a la seccion para concluir la compra">
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,16 +49,16 @@
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
-                    <img class="carroDesktop" src="../assets/images/iconos-y-logos/carro.png" alt="Icono del carro de compras. Clickeando lleva a la seccion para concluir la compra">
+                    <a href="./carro.html"><img class="carroDesktop" src="../assets/images/iconos-y-logos/carro.png" alt="Icono del carro de compras. Clickeando lleva a la seccion para concluir la compra"></a> 
                 </div>
             </div>
           </nav>
     </header>
 
-    <div id="contenedorItems" class="contenedorItems redondeado">
+    <div id="contenedorItems" class="contenedorItemsOff redondeado">
         
         <div id="itemHeader" class="itemHeader">
-            <span class="productHeaderCart">Product</span>
+            <span class="productNameHeaderCart">Product</span>
             <span class="priceHeaderCart">Price</span>
             <span class="quantityHeaderCart">Quantity</span>
             <span class="subTotalHeaderCart">Sub Total</span>
@@ -69,7 +72,12 @@
         </div>
     </div>
 
-    <a id="seguirComprandoButton" class="seguirComprandoButton redondeado">SEGUIR COMPRANDO</a>
+    <a class="botonesCarro pagarConMPButtonOff" id="pagarConMPButton" href="./pago.html">
+        <img src="../assets/images/iconos-y-logos/icono mercadopago.png" class="mercadopagoicono" alt="">
+        Pagar con Mercado Pago
+    </a>
+    <a class="botonesCarro seguirComprandoButtonSinItems" id="seguirComprandoButton">SEGUIR COMPRANDO</a>
+    
 
     <footer>
         <div class="footer">
@@ -81,5 +89,7 @@
     </footer>
     <script src="../assets/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="../assets/js/carro.js" type="module"></script> 
+    <script src="../assets/js/cartHelper.js" type="module"></script> 
+
 </body>
 </html>
