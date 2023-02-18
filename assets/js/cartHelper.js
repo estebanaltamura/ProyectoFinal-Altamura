@@ -11,7 +11,11 @@ export const cartHelper = {
 
             cartHelperPrivateMethods.calcTotalCart(cartItemsAdded)
             
-            window.innerWidth > 768 && cartHelperPrivateMethods.printItemsDesktop(cartItemsAdded)
+            window.innerWidth >= 768 ?
+                cartHelperPrivateMethods.printItemsDesktop(cartItemsAdded)
+                                     :
+                cartHelperPrivateMethods.printItemsMobile(cartItemsAdded)
+
 
             cartHelperPrivateMethods.showHideContenedorItems(cartHelperPrivateMethods.hasItems(cartItemsAdded))
         }
@@ -108,6 +112,53 @@ const cartHelperPrivateMethods = {
                 contenedorItems.removeChild(element)
             })
         }
+    },
+
+    printItemsMobile : (cartItemsAdded)=> {
+        const contenedorItems = document.getElementById("contenedorItems")
+        cartHelperPrivateMethods.limpiarNodosItemClass()
+    
+        cartItemsAdded.forEach((element) =>{
+            const divItem               = document.createElement("DIV")
+    
+            const imagenCartItemimg     = document.createElement("IMG")
+            const tituloCartItemSpan    = document.createElement("SPAN")
+            const priceCartItemSpan     = document.createElement("SPAN")
+            const quantityCartItemSpan  = document.createElement("SPAN")
+            const moreQuantityIcon      = document.createElement("IMG")
+            const lessQuantityIcon      = document.createElement("IMG")
+            const subTotalCartItemSpan  = document.createElement("SPAN")
+            const removeIcon            = document.createElement("IMG")
+        
+            divItem.className              = "item"
+    
+            imagenCartItemimg.className    = "imagenCartItem"
+            tituloCartItemSpan.className   = "tituloCartItem"
+            priceCartItemSpan.className    = "priceCartItem"
+            quantityCartItemSpan.className = "quantityCartItem"
+            moreQuantityIcon.className     = "moreQuantityIcon"
+            lessQuantityIcon.className     = "lessQuantityIcon"
+            subTotalCartItemSpan.className = "subTotalCartItem"
+            removeIcon.className           = "removeIcon"
+    
+            divItem.id              = element.idProduct
+            moreQuantityIcon.id     = "moreQuantityIcon"
+            lessQuantityIcon.id     = "lessQuantityIcon"
+            removeIcon.id           = "removeIcon"
+    
+            imagenCartItemimg.setAttribute("src", element.imagen)
+            tituloCartItemSpan.textContent   = element.nombre
+            priceCartItemSpan.textContent    = element.precio
+            quantityCartItemSpan.textContent = element.cantidad
+            moreQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-plus-48.png")
+            lessQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-minus-48.png")
+            subTotalCartItemSpan.textContent = element.subtotal 
+            removeIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-multiply-64.png")
+    
+            divItem.append(imagenCartItemimg, tituloCartItemSpan, priceCartItemSpan, quantityCartItemSpan, moreQuantityIcon, lessQuantityIcon, subTotalCartItemSpan, removeIcon)
+                  
+            contenedorItems.insertBefore(divItem, contenedorItems.children[1])
+        })
     },
 
     printItemsDesktop : (cartItemsAdded)=> {
