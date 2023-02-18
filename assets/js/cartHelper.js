@@ -1,6 +1,8 @@
 export const cartHelper = {
     cartDomContentLoaded: ()=>{
         const lastProductAdded = cartHelperPrivateMethods.getLastProductAdded()
+
+        //lastProductAdded && cartHelperPrivateMethods.notification()
         
         lastProductAdded && cartHelperPrivateMethods.UpdateCartLocalStorage(lastProductAdded)
 
@@ -320,6 +322,22 @@ const cartHelperPrivateMethods = {
             localStorage.setItem("cartItemsAdded", JSON.stringify([lastProductAdded]))
             localStorage.removeItem("lastProductAdded")
         }
-    }
+    },
+    //NOTIFICATIONS
+    notification: Toastify({
+        text: "Product added",
+        duration: 3000,
+        newWindow: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "grey",
+          width: "100%",
+          height: "45"
+
+        },
+        onClick: function(){} // Callback after click
+      }).showToast()
 }
 

@@ -4,6 +4,9 @@
 
 /*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
 /*SAAS MIXIN*/
+
+
+
 .contenedorMain {
     @include setupGrillas(grid, relative, 100%, 95px);
     margin: 0 auto;
@@ -558,7 +561,9 @@ h2, p{
     align-items: center;
     justify-content: center;
     top: 95px;
+    width: calc(100% - 30px);
     min-width:250px;
+    max-width: 350px;
     height: 50px;
     border: none;
     border-radius: 6px;
@@ -603,31 +608,36 @@ h2, p{
     display: grid;
     position: relative;
     top:95px;
-    margin: 30px auto 30px auto;
-    width: 100%;
+    margin: 30px auto;
+    width: calc(100% - 30px);
     height: auto;
     border: 1px solid black;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px auto;
+    grid-template-rows: auto auto;
     grid-template-areas: "titulo" "body";
     font-family: montserrat,sans-serif, helvetica;
     text-align: center;
     line-height: 2;
     align-items: center;
-    word-wrap: break-word;
+    
+    
 }
 
 
 
 .tituloParaspanInfoParaMp{
+    width:100%;
+    margin-top: 35px;
     display: flex;
+    justify-content: center;
     font-weight: 700;
-    width: 100%;
+    
 }
 
-.spanInfoParaMp{
-    display: flex;
-    width: 100%;
+.objectToMPContainer{
+    width:100%;
+    margin-top: 35px;
+    word-break: break-all;
 }
 
 .pagoSeguirComprando{
