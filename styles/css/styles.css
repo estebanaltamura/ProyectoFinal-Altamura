@@ -245,6 +245,9 @@ a:hover {
 .textoFundacion2 {
   grid-area: textoFundacion2; }
 
+.hidden {
+  display: none; }
+
 .portadaMobile {
   display: flex;
   width: 100%; }
@@ -755,10 +758,8 @@ h2, p {
   position: relative;
   display: flex;
   top: 95px;
-  padding: 10px 10px 0 10px;
   margin: 30px auto 15px auto;
   width: calc(100% - 30px);
-  min-width: 738px;
   max-width: 1050px;
   height: fit-content;
   flex-wrap: wrap;
@@ -781,15 +782,19 @@ h2, p {
   font-size: 15px; }
 
 .productNameHeaderCart {
+  font-weight: 700;
   grid-area: productNameHeaderCart; }
 
 .priceHeaderCart {
+  font-weight: 700;
   grid-area: priceHeaderCart; }
 
 .quantityHeaderCart {
+  font-weight: 700;
   grid-area: quantityHeaderCart; }
 
 .subTotalHeaderCart {
+  font-weight: 700;
   grid-area: subTotalHeaderCart; }
 
 .item {
@@ -805,16 +810,38 @@ h2, p {
   text-align: center;
   font-size: 16px; }
 
+.itemMobile {
+  display: grid;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 100px 1fr 35px 35px 35px 1fr 35px 35px 35px;
+  grid-template-rows: 35px 24px 24px 24px 30px 24px 24px;
+  grid-template-areas: "tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem removeItemIcon" "imagenCartItem descripcion descripcion descripcion descripcion descripcion priceHeaderCart priceHeaderCart priceHeaderCart" "imagenCartItem descripcion descripcion descripcion descripcion descripcion priceCartItem priceCartItem priceCartItem" "imagenCartItem descripcion descripcion descripcion descripcion descripcion minusQuantity quantityCartItem moreQuantity" "imagenCartItem descripcion descripcion descripcion descripcion descripcion  minusQuantity quantityCartItem moreQuantity" "imagenCartItem descripcion descripcion descripcion descripcion descripcion subTotalHeaderCart subTotalHeaderCart subTotalHeaderCart" "imagenCartItem descripcion descripcion descripcion descripcion descripcion subTotalCartItem subTotalCartItem subTotalCartItem";
+  border-bottom: 2px solid black;
+  text-align: center;
+  font-size: 16px; }
+
 .imagenCartItem {
   grid-area: imagenCartItem;
   justify-content: flex-start;
-  width: 120px; }
+  width: 100%; }
 
 .tituloCartItem {
-  grid-area: tituloCartItem; }
+  grid-area: tituloCartItem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+  height: 35px; }
 
 .priceCartItem {
   grid-area: priceCartItem; }
+
+.descripcionCartItem {
+  grid-area: descripcion; }
 
 .quantityCartItem {
   grid-area: quantityCartItem; }
@@ -822,25 +849,28 @@ h2, p {
 .moreQuantityIcon {
   grid-area: moreQuantity;
   cursor: pointer;
-  margin: auto auto 13px auto;
-  width: 30px;
-  height: 25px; }
+  margin: 0 auto;
+  width: 25px;
+  height: 20px; }
 
 .lessQuantityIcon {
   grid-area: minusQuantity;
   cursor: pointer;
-  margin: 13px auto auto auto;
-  width: 30px;
-  height: 25px; }
+  margin: 0 auto;
+  width: 25px;
+  height: 20px; }
 
 .subTotalCartItem {
   grid-area: subTotalCartItem; }
 
 .removeIcon {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  justify-content: right;
+  border-bottom: 1px solid black;
   grid-area: removeItemIcon;
-  cursor: pointer;
-  margin: auto auto auto 0;
-  width: 33px; }
+  cursor: pointer; }
 
 .totalCartContainer {
   display: grid;
@@ -849,7 +879,17 @@ h2, p {
   align-items: center;
   grid-template-columns: 120px 1fr 100px 100px 80px 100px 50px;
   grid-template-rows: 50px;
-  grid-template-areas: "vacio vacio vacio vacio totalCartTitle totalCartNumber vacio1"; }
+  grid-template-areas: "vacio vacio vacio totalCartTitle totalCartTitle totalCartNumber totalCartNumber vacio1"; }
+
+.totalCartContainerMobile {
+  display: grid;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  grid-template-columns: 30px 30px 30px 30px 1fr 35px 35px 35px 1fr 35px 35px 35px;
+  grid-template-rows: 50px;
+  grid-template-areas: "vacio vacio vacio vacio vacio vacio totalCartTitle totalCartTitle totalCartTitle totalCartNumber totalCartNumber totalCartNumber"; }
 
 .totalCartTitle {
   grid-area: totalCartTitle;
@@ -869,7 +909,7 @@ h2, p {
   align-items: center;
   justify-content: center;
   top: 95px;
-  width: 350px;
+  min-width: 250px;
   height: 50px;
   border: none;
   border-radius: 6px;
@@ -907,7 +947,7 @@ h2, p {
   position: relative;
   top: 95px;
   margin: 30px auto 30px auto;
-  width: 800px;
+  width: 100%;
   height: auto;
   border: 1px solid black;
   grid-template-columns: 1fr;
@@ -916,10 +956,17 @@ h2, p {
   font-family: montserrat,sans-serif, helvetica;
   text-align: center;
   line-height: 2;
-  align-items: center; }
+  align-items: center;
+  word-wrap: break-word; }
 
 .tituloParaspanInfoParaMp {
-  font-weight: 700; }
+  display: flex;
+  font-weight: 700;
+  width: 100%; }
+
+.spanInfoParaMp {
+  display: flex;
+  width: 100%; }
 
 .pagoSeguirComprando {
   border: 1px solid black;
