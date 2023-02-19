@@ -95,7 +95,7 @@ export const cartHelper = {
     },
 
     backToaConvenientPage : ()=> {
-        window.location.href = "/index.html"
+        window.location.href = "/"
     }
 }    
 
