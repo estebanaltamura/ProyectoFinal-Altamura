@@ -95,7 +95,7 @@ export const cartHelper = {
     },
 
     backToaConvenientPage : ()=> {
-        history.back()
+        history.go(-2)
     }
 }    
 
