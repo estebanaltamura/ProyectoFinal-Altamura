@@ -40,10 +40,10 @@ a:hover {
   box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.75); }
 
 .carousel-control-prev-icon {
-  background-image: url(../assets/images/iconos-y-logos/icons8-chevron-left-96.png); }
+  background-image: url(https://i.postimg.cc/RFzMbrkm/icons8-chevron-left-96.png); }
 
 .carousel-control-next-icon {
-  background-image: url(../assets/images/iconos-y-logos/icons8-chevron-right-96.png); }
+  background-image: url(https://i.postimg.cc/ZRFJG7md/icons8-chevron-right-96.png); }
 
 /*  MIXIN PRINCIPALES GRILLAS*/
 /*HEADER ------------------------------------------------------------------------------------------------*/
@@ -343,6 +343,9 @@ a:hover {
   text-align: center;
   font-size: 16px;
   font-weight: 700; }
+
+.sliderIcon {
+  opacity: 1; }
 
 /*PAGINA PRODUCTO--------------------------------------------------------------------------------*/
 /*SAAS MIXIN*/
