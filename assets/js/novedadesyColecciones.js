@@ -3,31 +3,6 @@ import {novedadesyColeccionesPrinting} from "./novedadesyColeccionesPrinting.js"
 
 const contenedorCards = document.getElementById("contenedorCards")
 const loadingIcon = document.getElementById("loadingIcon")
-console.log(loadingIcon)
-let coleccion
-
-document.addEventListener("DOMContentLoaded", (e)=>{
-    const colectionName = getColectionName(e)
-
-    const getData = async (colectionName)=>{
-        const products = await getProducts()
-        loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
-        const productosByColeccion = products[colectionName]
-        coleccion = productosByColeccion
-        novedadesyColeccionesPrinting(productosByColeccion)
-    } 
-
-    getData(colectionName)
-    
-}) 
-
-const getColectionName = (e)=> {
-    const evento = e.target.baseURI
-    const cadenaCompleta       = evento
-    const inicioCadenaaExtraer = evento.lastIndexOf("/")+1
-    const finalCadenaaExtraer  = evento.length-5
-    return cadenaCompleta.slice(inicioCadenaaExtraer, finalCadenaaExtraer)
-}
 
 const getIdEnlaceCliqueado = (e)=>{ 
     if (e.target.localName == "img")     return (e.target.parentNode.id) 
@@ -36,29 +11,30 @@ const getIdEnlaceCliqueado = (e)=>{
     else return false
 }
 
-const getProducto =(id)=>{
-    
-    return coleccion.filter(element=>element.id == id)
+const getColectionName = (e)=> {
+    const url = e.target.baseURI
+    const inicioCadenaaExtraer = url.lastIndexOf("/")+1
+    const finalCadenaaExtraer  = url.length-5
+    return url.slice(inicioCadenaaExtraer, finalCadenaaExtraer)
 }
 
-contenedorCards.addEventListener("click",(e)=>{
-    if (getIdEnlaceCliqueado(e)){
-
-        const producto = getProducto(getIdEnlaceCliqueado(e))[0]
+document.addEventListener("DOMContentLoaded", (e)=>{
+    const colectionName = getColectionName(e)
+    
+    const getData = async (colectionName)=>{
+        const completeData = await getProducts()
+        const completeDataHandled = completeData[0]
+        loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
         
-        localStorage.setItem(
-            "infoToProductPage",
-            JSON.stringify(
-                {"idProduct" : getIdEnlaceCliqueado(e),
-                 "colectionName" : getColectionName(e),
-                 "imagen" : producto.imagen,
-                 "nombre" : producto.nombre,
-                 "precio" : producto.precio,
-                 "cantidad" : 1
-                }
-            )
-        )
-        window.location.href = `../pages/producto.html` 
-    }
+        const productosByColeccion = completeDataHandled[colectionName]
+        novedadesyColeccionesPrinting(productosByColeccion)
+    } 
+
+    getData(colectionName)
+    
+}) 
+
+contenedorCards.addEventListener("click",(e)=>{
+    if (getIdEnlaceCliqueado(e)) window.location.href = `../pages/producto.html?id=${getIdEnlaceCliqueado(e)}` 
 })
 

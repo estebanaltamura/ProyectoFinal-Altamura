@@ -3,35 +3,42 @@ import { productPrinting } from "./productPrinting.js"
 
 const botonATC = document.getElementById("botonATC")
 
+document.addEventListener("DOMContentLoaded", async (e)=>{
+   
+    const getData = async (e)=>{
+        const completeData = await getProducts()
+        const completeDataHandled = completeData[0]
+        const claves = Object.keys(completeDataHandled)
 
+        const getIdProduct = (e)=> {
+            const url = e.target.baseURI
+            const inicioCadenaaExtraer = url.lastIndexOf("=")+1
+            return url.slice(inicioCadenaaExtraer)
+        }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    const productInfo = JSON.parse(localStorage.getItem("infoToProductPage"))
-    const {idProduct, colectionName} = productInfo
+        let idFounded;
 
-    const getData = async (colectionName, idProduct)=>{
-        const products = await getProducts()
-        const productosByColeccion = products[colectionName]
-        const indexofIdProduct = productosByColeccion.findIndex(element=>element.id==idProduct)
-        const producto = productosByColeccion[indexofIdProduct]
         
-        productPrinting(producto)
+        claves.forEach(element=>{
+            completeDataHandled[element].forEach(elementx=>{
+                if (getIdProduct(e) == elementx.id) idFounded = elementx
+                
+            })
+        })
+        
+        
+        return idFounded
     } 
 
-    getData(colectionName, idProduct)
+    const productData = await getData(e)
 
-
-     
-    
+    productPrinting(productData)
 }) 
 
 
 botonATC.addEventListener("click",()=>{
-    
     localStorage.setItem("lastProductAdded", localStorage.getItem("infoToProductPage"));
-    localStorage.removeItem("infoToProductPage")
-    
-    window.location.href = `../pages/carro.html` 
+    //window.location.href = `../pages/carro.html` 
 })
 
 

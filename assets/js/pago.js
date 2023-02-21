@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
      
 })
 
-seguirComprandoButton.addEventListener("click", ()=> window.location.href = "/index.html")
+seguirComprandoButton.addEventListener("click", ()=> history.go(-2))
 
 
 
