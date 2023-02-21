@@ -4,42 +4,44 @@ import { productPrinting } from "./productPrinting.js"
 const botonATC = document.getElementById("botonATC")
 
 document.addEventListener("DOMContentLoaded", async (e)=>{
-   
-    const getData = async (e)=>{
-        const completeData = await getProducts()
-        const completeDataHandled = completeData[0]
-        const claves = Object.keys(completeDataHandled)
+    const productAndCollectionFounded = await getData(e)
+    productPrinting(productAndCollectionFounded[0])
+})  
 
-        const getIdProduct = (e)=> {
-            const url = e.target.baseURI
-            const inicioCadenaaExtraer = url.lastIndexOf("=")+1
-            return url.slice(inicioCadenaaExtraer)
-        }
-
-        let idFounded;
-
-        
-        claves.forEach(element=>{
-            completeDataHandled[element].forEach(elementx=>{
-                if (getIdProduct(e) == elementx.id) idFounded = elementx
-                
-            })
-        })
-        
-        
-        return idFounded
-    } 
-
-    const productData = await getData(e)
-
-    productPrinting(productData)
-}) 
-
-
-botonATC.addEventListener("click",()=>{
-    localStorage.setItem("lastProductAdded", localStorage.getItem("infoToProductPage"));
-    //window.location.href = `../pages/carro.html` 
+botonATC.addEventListener("click", async(e)=>{
+    const productAndCollectionFounded = await getData(e)
+    console.log(productAndCollectionFounded[0].imagen)
+    localStorage.setItem("lastProductAdded", JSON.stringify({
+        "idProduct" : productAndCollectionFounded[0].id,
+        "colectionName" : productAndCollectionFounded[1],
+        "imagen" : productAndCollectionFounded[0].imagen,
+        "nombre" : productAndCollectionFounded[0].nombre,
+        "precio" : productAndCollectionFounded[0].precio,
+        "cantidad" : 1
+    }));
+    window.location.href = `../pages/carro.html` 
 })
 
 
+const getData = async (e)=>{
+    const completeData = await getProducts()
+    const completeDataHandled = completeData[0]
+    const claves = Object.keys(completeDataHandled)
 
+    const getIdProduct = (e)=> {
+        const url = e.target.baseURI
+        const inicioCadenaaExtraer = url.lastIndexOf("=")+1
+        return url.slice(inicioCadenaaExtraer)
+    }
+
+    let productAndCollectionFounded = [];
+
+    claves.forEach(clave=>{
+        completeDataHandled[clave].forEach(producto=>{
+            if (getIdProduct(e) == producto.id) productAndCollectionFounded = [producto, clave]
+            
+        })
+    })
+        
+    return productAndCollectionFounded
+} 
