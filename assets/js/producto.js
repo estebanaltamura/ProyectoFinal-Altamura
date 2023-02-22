@@ -14,12 +14,12 @@ botonATC.addEventListener("click", async(e)=>{
     localStorage.setItem("lastProductAdded", JSON.stringify({
         "idProduct" : productAndCollectionFounded[0].id,
         "colectionName" : productAndCollectionFounded[1],
-        "imagen" : productAndCollectionFounded[0].imagen,
-        "nombre" : productAndCollectionFounded[0].nombre,
-        "precio" : productAndCollectionFounded[0].precio,
+        "imagen" : productAndCollectionFounded[0].images[0],
+        "nombre" : productAndCollectionFounded[0].name,
+        "precio" : productAndCollectionFounded[0].price,
         "cantidad" : 1
     }));
-    window.location.href = `../pages/carro.html` 
+    window.location.href = `../pages/cart.html` 
 })
 
 

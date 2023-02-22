@@ -23,7 +23,7 @@ $templateAreaHomeMobile: "portada"
 "textoFundacion2"
 "vacio7";
 
-$templateRowsHomeMobile: auto 100px auto 80px auto 80px auto 80px 0px 40px auto 15px auto 40px 60px auto 40px auto 15px auto 15px auto 40px;
+$templateRowsHomeMobile: auto 100px auto 80px auto 80px auto 80px 0px 60px auto 15px auto 20px 60px auto 40px auto 15px auto 15px auto 40px;
 
 /*GRIDS HOME 768PX*/
 $templateAreaHome768px: "portada portada portada portada"
@@ -49,7 +49,7 @@ $templateAreaHome768px: "portada portada portada portada"
 "paddingleft vacio4 vacio4 paddingright";
 
 $templateColumnsHome768px: 15px 1fr 1fr 15px;
-$templateRowsHome768px: auto 100px auto 80px auto 80px auto 80px 0px auto auto 5px auto 40px 60px auto auto 40px auto 70px 50px;
+$templateRowsHome768px: auto 100px auto 80px auto 80px auto 80px 0px 60px auto 5px auto 20px 60px auto auto 40px auto 70px 50px;
 
 /*GRIDS HOME 992PX*/
 $templateAreaHome992px: "portada portada portada portada portada portada portada portada"
@@ -71,7 +71,7 @@ $templateAreaHome992px: "portada portada portada portada portada portada portada
 "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright";
 
 $templateColumnsHome992px: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
-$templateRowsHome992px: auto 100px auto 40px 40px auto auto 5px auto 20px 60px auto auto 40px auto 70px 50px; 
+$templateRowsHome992px: auto 100px auto 40px 40px auto auto 5px auto 20px 40px auto auto 40px auto 70px 50px; 
 
 /*GRIDS HOME 1200PX*/
 $templateAreaHome1200px: "portada portada portada portada portada portada portada portada portada portada portada portada portada portada"
@@ -93,7 +93,7 @@ $templateAreaHome1200px: "portada portada portada portada portada portada portad
 "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright";
 
 $templateColumnsHome1200px: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
-$templateRowsHome1200px: auto 100px auto 40px 40px auto auto 5px auto 20px 60px auto auto 40px auto 70px 50px;
+$templateRowsHome1200px: auto 100px auto 40px 20px 40px auto 5px auto 20px 40px auto auto 40px auto 70px 50px;
 
 /*GRIDS PRODUCTOS MOBILE*/
 $templateAreaProductosMobile: "carrusel" 

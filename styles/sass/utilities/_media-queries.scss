@@ -75,7 +75,8 @@
     .portadaDesktop{
         display: flex;
     }
-    
+
+       
     /*SAAS FOR*/
     @for $i from 1 through 4{
         .fotosdeUso#{$i}{

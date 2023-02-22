@@ -159,7 +159,7 @@ a:hover {
   top: 95px;
   margin: 0 auto;
   padding: 0 15px;
-  grid-template-rows: auto 100px auto 80px auto 80px auto 80px 0px 40px auto 15px auto 40px 60px auto 40px auto 15px auto 15px auto 40px;
+  grid-template-rows: auto 100px auto 80px auto 80px auto 80px 0px 60px auto 15px auto 20px 60px auto 40px auto 15px auto 15px auto 40px;
   gap: none;
   grid-template-areas: "portada" "titulocolecciones" "imagencoleccion1" "titulocoleccion1" "imagencoleccion2" "titulocoleccion2" "imagencoleccion3" "titulocoleccion3" "vacio1" "tituloNosotrosPortada" "parrafoNosotros1" "vacio2" "parrafoNosotros2" "vacio3" "ourCommunity" "fotosuso" "vacio4" "imagenFundacion" "vacio5" "textoFundacion1" "vacio6" "textoFundacion2" "vacio7"; }
 
@@ -279,17 +279,18 @@ a:hover {
 
 .tituloNosotrosPortada {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 auto; }
+  font-size: 30px;
+  margin: auto; }
 
 .parrafoNosotros {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  max-width: 700px;
   font-size: 16px;
   text-align: center; }
 
 .ourCommunity {
+  font-size: 30px;
   margin: auto; }
 
 .sliderFotosdeUso {
@@ -1039,7 +1040,7 @@ h2, p {
   /*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
   .contenedorMain {
     grid-template-columns: 15px 1fr 1fr 15px;
-    grid-template-rows: auto 100px auto 80px auto 80px auto 80px 0px auto auto 5px auto 40px 60px auto auto 40px auto 70px 50px;
+    grid-template-rows: auto 100px auto 80px auto 80px auto 80px 0px 60px auto 5px auto 20px 60px auto auto 40px auto 70px 50px;
     padding: 0;
     gap: 10px;
     grid-template-areas: "portada portada portada portada" "paddingleft titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 paddingright" "paddingleft imagencoleccion2 imagencoleccion2 paddingright" "paddingleft titulocoleccion2 titulocoleccion2 paddingright" "paddingleft imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion3 titulocoleccion3 paddingright" "paddingleft vacio1 vacio1 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft vacio2 vacio2 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft vacio3 vacio3 paddingright" "paddingleft ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso2 paddingright" "paddingleft fotosuso3 fotosuso4 paddingright" "paddingleft vacio5 vacio5 paddingright" "paddingleft imagenFundacion textoFundacion1 paddingright" "paddingleft imagenFundacion textoFundacion2 paddingright" "paddingleft vacio4 vacio4 paddingright"; }
@@ -1102,7 +1103,7 @@ h2, p {
   /*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
   .contenedorMain {
     grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
-    grid-template-rows: auto 100px auto 40px 40px auto auto 5px auto 20px 60px auto auto 40px auto 70px 50px;
+    grid-template-rows: auto 100px auto 40px 40px auto auto 5px auto 20px 40px auto auto 40px auto 70px 50px;
     gap: 10px;
     grid-template-areas: "portada portada portada portada portada portada portada portada" "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 paddingright" "paddingleft vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 paddingright" "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso3 fotosuso3 paddingright" "paddingleft fotosuso4 fotosuso4 fotosuso5 fotosuso5 fotosuso6 fotosuso6 paddingright" "paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 paddingright" "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright"; }
   .portadaTablet {
@@ -1116,7 +1117,7 @@ h2, p {
   .contenedorMain {
     max-width: 1200px;
     grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
-    grid-template-rows: auto 100px auto 40px 40px auto auto 5px auto 20px 60px auto auto 40px auto 70px 50px;
+    grid-template-rows: auto 100px auto 40px 20px 40px auto 5px auto 20px 40px auto auto 40px auto 70px 50px;
     gap: 10px;
     grid-template-areas: "portada portada portada portada portada portada portada portada portada portada portada portada portada portada" "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright" "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 imagencoleccion3 imagencoleccion3 paddingright" "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 titulocoleccion3 titulocoleccion3 paddingright" "paddingleft vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 paddingright" "paddingleft tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada tituloNosotrosPortada paddingright" "paddingleft parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 parrafoNosotros1 paddingright" "paddingleft vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 paddingright" "paddingleft parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 parrafoNosotros2 paddingright" "paddingleft vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 paddingright" "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright" "paddingleft fotosuso1 fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso2 fotosuso3 fotosuso3 fotosuso3 fotosuso4 fotosuso4 fotosuso4 paddingright" "paddingleft fotosuso5 fotosuso5 fotosuso5 fotosuso6 fotosuso6 fotosuso6 fotosuso7 fotosuso7 fotosuso7 fotosuso8 fotosuso8 fotosuso8 paddingright" "paddingleft vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 vacio4 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 textoFundacion1 paddingright" "paddingleft imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion imagenFundacion textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 textoFundacion2 paddingright" "paddingleft vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 vacio5 paddingright"; }
   .fotosdeUso7, .fotosdeUso8 {

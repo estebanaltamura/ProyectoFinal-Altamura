@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         const completeData = await getProducts()
         const completeDataHandled = completeData[0]
         loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
-        
         const productosByColeccion = completeDataHandled[colectionName]
         novedadesyColeccionesPrinting(productosByColeccion)
     } 
@@ -35,6 +34,6 @@ document.addEventListener("DOMContentLoaded", (e)=>{
 }) 
 
 contenedorCards.addEventListener("click",(e)=>{
-    if (getIdEnlaceCliqueado(e)) window.location.href = `../pages/producto.html?id=${getIdEnlaceCliqueado(e)}` 
+    if (getIdEnlaceCliqueado(e)) window.location.href = `../pages/product.html?id=${getIdEnlaceCliqueado(e)}` 
 })
 
