@@ -1,6 +1,6 @@
 export const cartHelper = {
     cartDomContentLoaded: ()=>{
-        cartHelperPrivateMethods.removeInfoToProductPago()
+        
         const lastProductAdded = cartHelperPrivateMethods.getLastProductAdded()
 
         lastProductAdded && cartHelperPrivateMethods.notification()
@@ -66,9 +66,9 @@ export const cartHelper = {
         const cartItemsAdded = cartHelperPrivateMethods.getCartItemsAdded()
         const IndexIncartItemsAddedofLessQuantity = cartHelperPrivateMethods.getIndexOfProductIncartItemsAdded(cartItemsAdded, idProductLessQuantityClicked)
               
-        cartItemsAdded[IndexIncartItemsAddedofLessQuantity].cantidad >0 && cartHelperPrivateMethods.restoreQuantityItemInItemsAdded(cartItemsAdded, IndexIncartItemsAddedofLessQuantity)           
+        cartItemsAdded[IndexIncartItemsAddedofLessQuantity].quantity >0 && cartHelperPrivateMethods.restoreQuantityItemInItemsAdded(cartItemsAdded, IndexIncartItemsAddedofLessQuantity)           
           
-        if (cartItemsAdded[IndexIncartItemsAddedofLessQuantity].cantidad == 0){
+        if (cartItemsAdded[IndexIncartItemsAddedofLessQuantity].quantity == 0){
             cartHelperPrivateMethods.removeNode(idProductLessQuantityClicked)
                 
             cartHelperPrivateMethods.removeItemOfcartItemsAdded(cartItemsAdded, IndexIncartItemsAddedofLessQuantity)
@@ -113,7 +113,7 @@ const cartHelperPrivateMethods = {
 
     calcTotalCart : (cartItemsAdded)=>{
         const totalCartNumber = document.getElementById("totalCartNumber")
-        totalCartNumber.textContent = `$ ${cartItemsAdded.reduce((acumulador, current)=> acumulador + (current.precio*current.cantidad), 0)}`
+        totalCartNumber.textContent = `$ ${cartItemsAdded.reduce((acumulador, current)=> acumulador + (current.price*current.quantity), 0)}`
     },
 
     cartHeaderHide: (showHide)=>{
@@ -170,13 +170,13 @@ const cartHelperPrivateMethods = {
             lessQuantityIcon.id     = "lessQuantityIcon"
             removeIconMobile.id     = "removeIcon"
     
-            imagenCartItemimg.setAttribute("src", element.imagen)
+            imagenCartItemimg.setAttribute("src", element.mainImage)
 
-            tituloCartItemSpan.textContent   = element.nombre
-            descripcion.textContent          = element.descripcion
+            tituloCartItemSpan.textContent   = `${element.name} - ${element.shortDescription}`
+            
 
             lessQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-minus-48.png")
-            quantityCartItemSpan.textContent = element.cantidad
+            quantityCartItemSpan.textContent = element.quantity
             moreQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-plus-48.png")
             
             subTotalCartItemSpan.textContent = `$ ${element.subtotal}`
@@ -220,10 +220,10 @@ const cartHelperPrivateMethods = {
             lessQuantityIcon.id     = "lessQuantityIcon"
             removeIcon.id           = "removeIcon"
     
-            imagenCartItemimg.setAttribute("src", element.imagen)
-            tituloCartItemSpan.textContent   = element.nombre
-            priceCartItemSpan.textContent    = element.precio
-            quantityCartItemSpan.textContent = element.cantidad
+            imagenCartItemimg.setAttribute("src", element.mainImage)
+            tituloCartItemSpan.textContent   = element.name
+            priceCartItemSpan.textContent    = element.price
+            quantityCartItemSpan.textContent = element.quantity
             moreQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-plus-48.png")
             lessQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-minus-48.png")
             subTotalCartItemSpan.textContent = element.subtotal 
@@ -241,11 +241,14 @@ const cartHelperPrivateMethods = {
     },
 
     showHideContenedorItems : (hasItems)=>{
+        const contenedorItems = document.getElementById("contenedorItems")
         const pagarConMPButton = document.getElementById("pagarConMPButton")
         const seguirComprandoButton = document.getElementById("seguirComprandoButton")
+        const  loadingIcon      = document.getElementById("loadingIcon")
     
         if (hasItems){
             contenedorItems.classList.replace("contenedorItemsOff","contenedorItems")
+            loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
             pagarConMPButton.classList.replace("pagarConMPButtonOff","pagarConMPButton")
             seguirComprandoButton.classList.replace("seguirComprandoButtonSinItems", "seguirComprandoButtonConItems")
         }
@@ -262,11 +265,11 @@ const cartHelperPrivateMethods = {
     },
 
     //LOCAL STORAGE
-    addQuantityItemInItemsAdded : (cartItemsAdded, IndexIncartItemsAddedofMoreQuantity)=> ++cartItemsAdded[IndexIncartItemsAddedofMoreQuantity].cantidad,
+    addQuantityItemInItemsAdded : (cartItemsAdded, IndexIncartItemsAddedofMoreQuantity)=> ++cartItemsAdded[IndexIncartItemsAddedofMoreQuantity].quantity,
     
     calcSubTotalPerItemCart : (cartItemsAdded)=>{
         cartItemsAdded.forEach(element=>{
-            element.subtotal = element.precio * element.cantidad
+            element.subtotal = element.price * element.quantity
         })
         
         localStorage.setItem("cartItemsAdded", JSON.stringify(cartItemsAdded))
@@ -284,7 +287,7 @@ const cartHelperPrivateMethods = {
 
     removeItemOfcartItemsAdded : (cartItemsAdded, IndexIncartItemsAddedOfItemToRemove)=> cartItemsAdded.splice(IndexIncartItemsAddedOfItemToRemove, 1),
 
-    restoreQuantityItemInItemsAdded : (cartItemsAdded, IndexIncartItemsAddedofMoreQuantity)=> --cartItemsAdded[IndexIncartItemsAddedofMoreQuantity].cantidad,
+    restoreQuantityItemInItemsAdded : (cartItemsAdded, IndexIncartItemsAddedofMoreQuantity)=> --cartItemsAdded[IndexIncartItemsAddedofMoreQuantity].quantity,
     
     removeInfoToProductPago : ()=> localStorage.removeItem("infoToProductPage"),
     
@@ -294,9 +297,9 @@ const cartHelperPrivateMethods = {
         if (localStorage.getItem("cartItemsAdded")){
             const carroSinActualizar = JSON.parse(localStorage.getItem("cartItemsAdded"))
             const repetido = carroSinActualizar.findIndex(element=>element.idProduct == lastProductAdded.idProduct)
-    
+                
             if (repetido >=0){
-                ++carroSinActualizar[repetido].cantidad
+                ++carroSinActualizar[repetido].quantity
                 const carroActualizado = [...carroSinActualizar]
                 localStorage.setItem("cartItemsAdded", JSON.stringify(carroActualizado))
                 localStorage.removeItem("lastProductAdded")

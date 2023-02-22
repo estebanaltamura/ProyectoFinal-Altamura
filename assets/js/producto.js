@@ -4,20 +4,30 @@ import { productPrinting } from "./productPrinting.js"
 const botonATC = document.getElementById("botonATC")
 
 document.addEventListener("DOMContentLoaded", async (e)=>{
+    const  footer           = document.getElementById("footer")
+    const  main             = document.getElementById("main")
+    const  loadingIcon      = document.getElementById("loadingIcon")
+
     const productAndCollectionFounded = await getData(e)
+
+    loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
+    footer.classList.replace("hidden", "_")
+    main.classList.replace("hidden", "containerGridsProduct")
+
     productPrinting(productAndCollectionFounded[0])
 })  
 
 botonATC.addEventListener("click", async(e)=>{
     const productAndCollectionFounded = await getData(e)
-    console.log(productAndCollectionFounded[0].imagen)
+    
     localStorage.setItem("lastProductAdded", JSON.stringify({
-        "idProduct" : productAndCollectionFounded[0].id,
-        "colectionName" : productAndCollectionFounded[1],
-        "imagen" : productAndCollectionFounded[0].images[0],
-        "nombre" : productAndCollectionFounded[0].name,
-        "precio" : productAndCollectionFounded[0].price,
-        "cantidad" : 1
+        "idProduct"         : productAndCollectionFounded[0].id,
+        "colectionName"     : productAndCollectionFounded[1],
+        "mainImage"         : productAndCollectionFounded[0].images[0],
+        "name"              : productAndCollectionFounded[0].name,
+        "price"             : productAndCollectionFounded[0].price,
+        "shortDescription"  : productAndCollectionFounded[0].shortDescription,
+        "quantity": 1
     }));
     window.location.href = `../pages/cart.html` 
 })

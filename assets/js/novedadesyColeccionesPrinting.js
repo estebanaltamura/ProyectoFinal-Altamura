@@ -15,7 +15,7 @@ export const novedadesyColeccionesPrinting = (productosByColeccion)=>{
         p1.textContent   = element.name
         
         p2.className     = `precioCard${i+1} precioCard`
-        p2.textContent   = element.price
+        p2.textContent   = `$ ${element.price}`
 
         img.className    = `imagenCard${i+1} imagenCard`
         img.src          = element.images[0]
