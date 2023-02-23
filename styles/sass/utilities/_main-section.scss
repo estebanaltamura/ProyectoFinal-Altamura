@@ -444,15 +444,18 @@ h2, p{
 .itemMobile{
     display: grid;
     width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
     height: fit-content;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 100px 35px 35px 35px 1fr 100px;
-    grid-template-rows: 50px 50px 1px 35px;
-    grid-template-areas: "imagenCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem"
-                         "imagenCartItem minusQuantity quantityCartItem moreQuantity vacio2 subTotalCartItem"
-                         "line line line line line line"
-                         "removeItemIcon vacio3 vacio3 vacio3 vacio3 vacio3";
+    grid-template-columns: 100px 1fr 35px 35px 35px 1fr 100px;
+    grid-template-rows: 25px 25px 50px 1px 35px;
+    grid-template-areas: "imagenCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem tituloCartItem vacio1"
+                         "imagenCartItem subTituloCartItem subTituloCartItem subTituloCartItem subTituloCartItem subTituloCartItem vacio1"
+                         "imagenCartItem vacio4 minusQuantity quantityCartItem moreQuantity vacio2 subTotalCartItem"
+                         "line line line line line line line"
+                         "removeItemIcon vacio3 vacio3 vacio3 vacio3 vacio3 vacio3";
                             
     border-bottom: 2px solid #6c6c6c;
     text-align: center;
@@ -467,14 +470,22 @@ h2, p{
     
 }
 
+.tituloCartItem, .subTituloCartItem{
+    text-align: center;
+    height: 24px;
+    width: 100%;
+    overflow: hidden;
+}
+
 .tituloCartItem{
     grid-area: tituloCartItem;
-    position: relative;
-    top:-8px;
-    height: 35px;
-    margin: auto;
-   
 }
+
+
+.subTituloCartItem{
+    grid-area: subTituloCartItem;
+}
+
 
 .priceCartItem{
     grid-area: priceCartItem;

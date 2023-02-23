@@ -145,6 +145,7 @@ const cartHelperPrivateMethods = {
 
             const imagenCartItemimg     = document.createElement("IMG")
             const tituloCartItemSpan    = document.createElement("SPAN")
+            const subTituloCartItemSpan = document.createElement("SPAN")
             const descripcion           = document.createElement("P")
             const quantityCartItemSpan  = document.createElement("SPAN")
             const moreQuantityIcon      = document.createElement("IMG")
@@ -157,6 +158,7 @@ const cartHelperPrivateMethods = {
     
             imagenCartItemimg.className     = "imagenCartItem"
             tituloCartItemSpan.className    = "tituloCartItem"
+            subTituloCartItemSpan.className = "subTituloCartItem"
             descripcion.className           = "descripcion"
             quantityCartItemSpan.className  = "quantityCartItem"
             moreQuantityIcon.className      = "moreQuantityIcon"
@@ -172,9 +174,9 @@ const cartHelperPrivateMethods = {
     
             imagenCartItemimg.setAttribute("src", element.mainImage)
 
-            tituloCartItemSpan.textContent   = `${element.name} - ${element.shortDescription}`
+            tituloCartItemSpan.textContent      = element.name
+            subTituloCartItemSpan.textContent   = element.shortDescription
             
-
             lessQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-minus-48.png")
             quantityCartItemSpan.textContent = element.quantity
             moreQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-plus-48.png")
@@ -182,7 +184,7 @@ const cartHelperPrivateMethods = {
             subTotalCartItemSpan.textContent = `$ ${element.subtotal}`
             removeIconMobile.textContent = "Eliminar"
     
-            divItem.append(imagenCartItemimg, tituloCartItemSpan, descripcion, quantityCartItemSpan, moreQuantityIcon, lessQuantityIcon, subTotalCartItemSpan, line, removeIconMobile)
+            divItem.append(imagenCartItemimg, tituloCartItemSpan, subTituloCartItemSpan, descripcion, quantityCartItemSpan, moreQuantityIcon, lessQuantityIcon, subTotalCartItemSpan, line, removeIconMobile)
                   
             contenedorItems.insertBefore(divItem, contenedorItems.children[1])
         })

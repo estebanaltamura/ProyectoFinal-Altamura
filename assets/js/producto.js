@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async (e)=>{
     const productAndCollectionFounded = await getData(e)
 
     loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
-    footer.classList.replace("hidden", "_")
+    footer.classList.replace("hidden", "footer")
     main.classList.replace("hidden", "containerGridsProduct")
 
     productPrinting(productAndCollectionFounded[0])
