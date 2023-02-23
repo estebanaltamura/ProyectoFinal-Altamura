@@ -177,9 +177,9 @@ const cartHelperPrivateMethods = {
             tituloCartItemSpan.textContent      = element.name
             subTituloCartItemSpan.textContent   = element.shortDescription
             
-            lessQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-minus-48.png")
+            lessQuantityIcon.setAttribute("src", "https://i.postimg.cc/pVC2k6qN/lessQuantityIcon.png")
             quantityCartItemSpan.textContent = element.quantity
-            moreQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-plus-48.png")
+            moreQuantityIcon.setAttribute("src", "https://i.postimg.cc/Qd9h8xss/moreQuantityIcon.png")
             
             subTotalCartItemSpan.textContent = `$ ${element.subtotal}`
             removeIconMobile.textContent = "Eliminar"
@@ -226,10 +226,10 @@ const cartHelperPrivateMethods = {
             tituloCartItemSpan.textContent   = element.name
             priceCartItemSpan.textContent    = element.price
             quantityCartItemSpan.textContent = element.quantity
-            moreQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-plus-48.png")
-            lessQuantityIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-minus-48.png")
+            moreQuantityIcon.setAttribute("src", "https://i.postimg.cc/pVC2k6qN/lessQuantityIcon.png")
+            lessQuantityIcon.setAttribute("src", "https://i.postimg.cc/Qd9h8xss/moreQuantityIcon.png")
             subTotalCartItemSpan.textContent = element.subtotal 
-            removeIcon.setAttribute("src", "../assets/images/iconos-y-logos/icons8-multiply-64.png")
+            removeIcon.setAttribute("src", "https://i.postimg.cc/prsRTmpV/icons8-multiply-64.png")
     
             divItem.append(imagenCartItemimg, tituloCartItemSpan, priceCartItemSpan, quantityCartItemSpan, moreQuantityIcon, lessQuantityIcon, subTotalCartItemSpan, removeIcon)
                   
