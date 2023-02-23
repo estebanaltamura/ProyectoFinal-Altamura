@@ -1,5 +1,5 @@
 import {getProducts} from "./getDataModule.js"
-import {novedadesyColeccionesPrinting} from "./novedadesyColeccionesPrinting.js"
+import {collectionsPrinting} from "./collectionsPrinting.js"
 
 const contenedorCards = document.getElementById("contenedorCards")
 const loadingIcon = document.getElementById("loadingIcon")
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         const completeDataHandled = completeData[0]
         loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
         const productosByColeccion = completeDataHandled[colectionName]
-        novedadesyColeccionesPrinting(productosByColeccion)
+        collectionsPrinting(productosByColeccion)
     } 
 
     getData(colectionName)

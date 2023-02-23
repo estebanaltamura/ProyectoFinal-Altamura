@@ -1,4 +1,4 @@
-export const novedadesyColeccionesPrinting = (productosByColeccion)=>{
+export const collectionsPrinting = (productosByColeccion)=>{
     const fragment = document.createDocumentFragment("")
     const contenedorCards = document.getElementById("contenedorCards")
     
