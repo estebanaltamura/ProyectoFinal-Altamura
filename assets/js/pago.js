@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     })
     
     objectToMPContainer.appendChild(fragment)
-    
-
-     
 })
 
 seguirComprandoButton.addEventListener("click", ()=> history.go(-2))

@@ -359,7 +359,7 @@ a:hover {
   margin: 0 auto;
   max-width: 480px;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 30px auto 30px 0px 30px 10px auto 20px 44px 10px 44px 30px 30px 30px auto 30px;
+  grid-template-rows: auto 30px auto 30px 0px 30px 10px auto 20px 50px 10px 50px 30px 30px 30px auto 30px;
   grid-template-areas: "carrusel" "vacio1" "titulo" "precio" "vacio2" "reviews" "vacio3" "nopesticidas" "vacio4" "botonATC" "vacio5" "botonComprar" "vacio6" "tituloDescripcion" "vacio7" "descripcion" "vacio8"; }
 
 h2, p {
@@ -386,12 +386,22 @@ h2, p {
   grid-area: nopesticidas; }
 
 .botonATC, .botonComprar {
-  width: 100%;
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: 500px;
-  border-radius: 18px;
-  border: none; }
+  position: relative;
+  display: flex;
+  margin: 0 auto 15px auto;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 30px);
+  min-width: 250px;
+  max-width: 450px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+  font-family: montserrat,sans-serif,Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 #fff; }
 
 .botonATC {
   background-color: white;
@@ -399,11 +409,19 @@ h2, p {
   border: 2px solid #68634b;
   grid-area: botonATC; }
 
+.botonATC:hover {
+  background-color: #6c6c6c;
+  color: white; }
+
 .botonComprar {
   border: 2px solid #68634b;
-  background-color: #68634b;
-  color: white;
+  background-color: white;
+  color: black;
   grid-area: botonComprar; }
+
+.botonComprar:hover {
+  background-color: #009EE3;
+  color: white; }
 
 .tituloDescripcion {
   margin: 0 auto;
@@ -1082,7 +1100,7 @@ h2, p {
     width: 768px;
     overflow: hidden;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0px 60px 30px 0px 20px 22px auto 22PX 44px 9px 44px 20px 30px 20px auto 30px;
+    grid-template-rows: 0px 60px 30px 0px 20px 22px auto 22PX 50px 9px 50px 20px 30px 20px auto 30px;
     grid-template-areas: "carrusel vacio1" "carrusel titulo" "carrusel precio" "carrusel vacio2" "carrusel reviews" "carrusel vacio3" "carrusel nopesticidas" "carrusel vacio4" "carrusel botonATC" "carrusel vacio5" "carrusel botonComprar" "vacio6 vacio6" "tituloDescripcion tituloDescripcion" "vacio7 vacio7" "descripcion descripcion" "vacio8 vacio8"; }
   .titulo, .precio, .reviews {
     padding: 0 20PX; }
@@ -1143,5 +1161,5 @@ h2, p {
     width: 1200px;
     overflow: hidden;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0px 60px 30px 0px 20px 30px auto 30PX 100px 22px 54px 20px 54px 20px 30px 20px auto 30px;
+    grid-template-rows: 0px 60px 30px 0px 20px 30px auto 30PX 100px 22px 50px 20px 50px 20px 30px 20px auto 30px;
     grid-template-areas: "carrusel vacio1" "carrusel titulo" "carrusel precio" "carrusel vacio2" "carrusel reviews" "carrusel vacio3" "carrusel nopesticidas" "carrusel vacio4" "carrusel algo" "carrusel vacio5" "carrusel botonATC" "carrusel vacio6" "carrusel botonComprar" "vacio7 vacio7" "tituloDescripcion tituloDescripcion" "vacio8 vacio8" "descripcion descripcion" "vacio9 vacio9"; } }
