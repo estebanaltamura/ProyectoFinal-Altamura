@@ -1,6 +1,6 @@
 
 
-
+window.addEventListener("load", ()=> showHome())
 
 const showHome = ()=>{
     const contenedorMain = document.getElementById("contenedorMain")
@@ -12,6 +12,6 @@ const showHome = ()=>{
     loadingIcon.className       == "loadingIcon" && loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
 }
 
-document.addEventListener("DOMContentLoaded", showHome)
+
 
 
