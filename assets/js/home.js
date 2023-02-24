@@ -1,6 +1,6 @@
 
 
-window.addEventListener("load", ()=>showHome())
+
 
 const showHome = ()=>{
     const contenedorMain = document.getElementById("contenedorMain")
@@ -13,5 +13,7 @@ const showHome = ()=>{
     footer.className            == "hidden" && footer.classList.replace("hidden","footer")
     loadingIcon.className       == "loadingIcon" && loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
 }
+
+document.addEventListener("DOMContentLoaded", showHome)
 
 
