@@ -9,7 +9,7 @@
     <meta name="keywords" content="calidad, sostenibilidad, premium, confiables, mochilas, funcionalidad, urbano. montaña, viajes, pandora"/>
     <link rel="icon" type="image/png" href="https://i.postimg.cc/QxnjZK20/logo.png">
     <link rel="stylesheet" href="./styles/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles/css/styles.css">
+    <link rel="stylesheet" preload="auto" href="./styles/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -58,12 +58,18 @@
           </nav>
     </header>
 
-    <main class="contenedorMain">
+    <div class="loadingIcon" id="loadingIcon">
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+
+    <main class="hidden" id="contenedorMain">
         <!------SECCION PORTADA------>
-        <img src="https://i.postimg.cc/W3nPWdmm/portada-mobile.jpg" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portadaMobile">
-        <img src="https://i.postimg.cc/Zn5z1JjG/portada375.jpg" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portada375">
-        <img src="https://i.postimg.cc/5yKWJDR6/portada-tablet.jpg" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portadaTablet">
-        <img src="https://i.postimg.cc/W1kcRW61/portada-desktop.jpg" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portadaDesktop">
+        <img src="https://i.postimg.cc/W3nPWdmm/portada-mobile.jpg" preload="auto" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portadaMobile" id="portadaMobile">
+        <img src="https://i.postimg.cc/Zn5z1JjG/portada375.jpg" preload="auto" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portada375" id="portada375">
+        <img src="https://i.postimg.cc/5yKWJDR6/portada-tablet.jpg" preload="auto" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portadaTablet" id="portadaTablet">
+        <img src="https://i.postimg.cc/W1kcRW61/portada-desktop.jpg" loapreloadding="auto" alt="Imagen de una mujer mirando al mar con una mochila blanca con rayas negras de tamaño medio de nuestra marca. Es la portada de la pagina web" class="portadaDesktop" id="portadaDesktop">
         
         
         <!------SECCION COLECCIONES------>
@@ -72,11 +78,11 @@
         <h2 class="titulocolecciones">Collections</h2>
         
         <!--COLECCIONES-->
-        <img class="coleccionesImagenes imagencoleccion1 redondeado" src="https://i.postimg.cc/mgJZC1Vt/urban-home.jpg" alt="Imagen de una mujer en una ciudad con una mochila de estilo urbano de tamaño mediano. Esta imagen es el enlace para entrar a la coleccion de mochilas urbanas">
+        <img class="coleccionesImagenes imagencoleccion1 redondeado" loading="lazy" src="https://i.postimg.cc/mgJZC1Vt/urban-home.jpg" alt="Imagen de una mujer en una ciudad con una mochila de estilo urbano de tamaño mediano. Esta imagen es el enlace para entrar a la coleccion de mochilas urbanas">
         <a href="./pages/urbanCollection.html" class="coleccionesTexto titulocoleccion1"><h3>Urban</h3></a>
-        <img class="coleccionesImagenes imagencoleccion2 redondeado" src="https://i.postimg.cc/FH7sYVyM/travel-home.jpg" alt="Imagen de una mujer con una mochila de viaje caminando por una ciudad. Esta imagen es el enlace para entrar a la coleccion de mochilas de viaje">
+        <img class="coleccionesImagenes imagencoleccion2 redondeado" loading="lazy" src="https://i.postimg.cc/FH7sYVyM/travel-home.jpg" alt="Imagen de una mujer con una mochila de viaje caminando por una ciudad. Esta imagen es el enlace para entrar a la coleccion de mochilas de viaje">
         <a href="./pages/travelCollection.html" class="coleccionesTexto titulocoleccion2"><h3>Travel</h3></a>
-        <img class="coleccionesImagenes imagencoleccion3 redondeado" src="https://i.postimg.cc/TYk324Dj/climbing-home.jpg" alt="Imagen de un hombre escalando una montaña cubierta de hielo con una mochila de alpinismo. Esta imagen es el enlace para entrar a la coleccion de mochilas de escalada">
+        <img class="coleccionesImagenes imagencoleccion3 redondeado" loading="lazy" src="https://i.postimg.cc/TYk324Dj/climbing-home.jpg" alt="Imagen de un hombre escalando una montaña cubierta de hielo con una mochila de alpinismo. Esta imagen es el enlace para entrar a la coleccion de mochilas de escalada">
         <a href="./pages/climbingCollection.html" class="coleccionesTexto titulocoleccion3"><h3>Climbing</h3></a>
 
         <!------SECCION SOBRE NUESTROS PRODUCTOS Y NOSOTROS------>
@@ -86,7 +92,7 @@
         
         <!------SECCION COLABORACION CON EL MEDIO AMBIENTE------>
         
-        <img class="imagenFundacion" src="https://i.postimg.cc/XJnRCVMr/1porcent.png" alt="Imagen del logo de la fundacion uno porciento para el planeta">
+        <img class="imagenFundacion" loading="lazy" src="https://i.postimg.cc/XJnRCVMr/1porcent.png" alt="Imagen del logo de la fundacion uno porciento para el planeta">
         <p class="textoFundacion1">The 1% for the planet foundation raises awareness about the damage we do to the planet.</p>
         <p class="textoFundacion2">That is why from Pandora we contribute 1% of our profits to this foundation. It is a commitment to the community and our customers.</p> 
 
@@ -94,76 +100,75 @@
         <h2 class="ourCommunity">Our community</h2>
         
         <!--IMAGENES FIJAS A PARTIR DE EL QUERY DE TABLET-->
-        <img src="https://i.postimg.cc/rskKWRVS/ourcommunity1.jpg" alt="Mujer con mochila naranja mirando hacia atras en direccion a la camara con una mochila naranja de nuestra linea urbana" class="fotosdeUso1 redondeado">
-        <img src="https://i.postimg.cc/50c0dQFZ/ourcommunity2.jpg" alt="Mujer montando una bicicleta cerca de un lago" class="fotosdeUso2 redondeado">
-        <img src="https://i.postimg.cc/FHR1j44n/ourcommunity3.jpg" alt="Hombre caminando por una ciudad con una mochila" class="fotosdeUso3 redondeado">
-        <img src="https://i.postimg.cc/X7xpGvTC/ourcommunity4.jpg" alt="Mujer caminando por una ciudad con una mochila de nuestra linea de viaje" class="fotosdeUso4 redondeado">
-        <img src="https://i.postimg.cc/jjn5F4CH/ourcommunity5.jpg" alt="Mujer de espaldas con una mochila de nuestra linea de viaje mirando al horizonte" class="fotosdeUso5 redondeado">
-        <img src="https://i.postimg.cc/brpwdXgg/ourcommunity6.jpg" alt="Mujer con nuestra mochila de viaje en un bosque" class="fotosdeUso6 redondeado">
-        <img src="https://i.postimg.cc/Wz8bk9fv/ourcommunity7.jpg" alt="Mujer de espaldas con una mochila mirando al horizonte" class="fotosdeUso7 redondeado">
-        <img src="https://i.postimg.cc/wxQBZvxG/ourcommunity8.jpg" alt="Hombre escalando una montaña con nuestra mochila de alpinismo" class="fotosdeUso8 redondeado">
+        <img src="https://i.postimg.cc/rskKWRVS/ourcommunity1.jpg" loading="lazy" alt="Mujer con mochila naranja mirando hacia atras en direccion a la camara con una mochila naranja de nuestra linea urbana" class="fotosdeUso1 redondeado">
+        <img src="https://i.postimg.cc/50c0dQFZ/ourcommunity2.jpg" loading="lazy" alt="Mujer montando una bicicleta cerca de un lago" class="fotosdeUso2 redondeado">
+        <img src="https://i.postimg.cc/FHR1j44n/ourcommunity3.jpg" loading="lazy" alt="Hombre caminando por una ciudad con una mochila" class="fotosdeUso3 redondeado">
+        <img src="https://i.postimg.cc/X7xpGvTC/ourcommunity4.jpg" loading="lazy" alt="Mujer caminando por una ciudad con una mochila de nuestra linea de viaje" class="fotosdeUso4 redondeado">
+        <img src="https://i.postimg.cc/jjn5F4CH/ourcommunity5.jpg" loading="lazy" alt="Mujer de espaldas con una mochila de nuestra linea de viaje mirando al horizonte" class="fotosdeUso5 redondeado">
+        <img src="https://i.postimg.cc/brpwdXgg/ourcommunity6.jpg" loading="lazy" alt="Mujer con nuestra mochila de viaje en un bosque" class="fotosdeUso6 redondeado">
+        <img src="https://i.postimg.cc/Wz8bk9fv/ourcommunity7.jpg" loading="lazy" alt="Mujer de espaldas con una mochila mirando al horizonte" class="fotosdeUso7 redondeado">
+        <img src="https://i.postimg.cc/wxQBZvxG/ourcommunity8.jpg" loading="lazy" alt="Hombre escalando una montaña con nuestra mochila de alpinismo" class="fotosdeUso8 redondeado">
         
         <!--SLIDER ENTRE MOBILE Y EL QUERY DE TABLET-->
         <div id="carouselExampleControls" class="carousel slide sliderFotosdeUso" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="https://i.postimg.cc/rskKWRVS/ourcommunity1.jpg" class="d-block w-100" alt="Mujer con mochila naranja mirando hacia atras en direccion a la camara con una mochila naranja de nuestra linea urbana">
+                <img src="https://i.postimg.cc/rskKWRVS/ourcommunity1.jpg" loading="lazy" class="d-block w-100" alt="Mujer con mochila naranja mirando hacia atras en direccion a la camara con una mochila naranja de nuestra linea urbana">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/50c0dQFZ/ourcommunity2.jpg" class="d-block w-100" alt="Mujer montando una bicicleta cerca de un lago">
+                <img src="https://i.postimg.cc/50c0dQFZ/ourcommunity2.jpg" loading="lazy" class="d-block w-100" alt="Mujer montando una bicicleta cerca de un lago">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/FHR1j44n/ourcommunity3.jpg" class="d-block w-100" alt="Hombre caminando por una ciudad con una mochila">
+                <img src="https://i.postimg.cc/FHR1j44n/ourcommunity3.jpg" loading="lazy" class="d-block w-100" alt="Hombre caminando por una ciudad con una mochila">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/X7xpGvTC/ourcommunity4.jpg" class="d-block w-100" alt="Mujer caminando por una ciudad con una mochila de nuestra linea de viaje">
+                <img src="https://i.postimg.cc/X7xpGvTC/ourcommunity4.jpg" loading="lazy" class="d-block w-100" alt="Mujer caminando por una ciudad con una mochila de nuestra linea de viaje">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/jjn5F4CH/ourcommunity5.jpg" class="d-block w-100" alt="Mujer de espaldas con una mochila de nuestra linea de viaje mirando al horizonte">
+                <img src="https://i.postimg.cc/jjn5F4CH/ourcommunity5.jpg" loading="lazy" class="d-block w-100" alt="Mujer de espaldas con una mochila de nuestra linea de viaje mirando al horizonte">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/brpwdXgg/ourcommunity6.jpg" class="d-block w-100" alt="Mujer con nuestra mochila de viaje en un bosque">
+                <img src="https://i.postimg.cc/brpwdXgg/ourcommunity6.jpg" loading="lazy" class="d-block w-100" alt="Mujer con nuestra mochila de viaje en un bosque">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/Wz8bk9fv/ourcommunity7.jpg" class="d-block w-100" alt="Mujer de espaldas con una mochila mirando al horizonte">
+                <img src="https://i.postimg.cc/Wz8bk9fv/ourcommunity7.jpg" loading="lazy" class="d-block w-100" alt="Mujer de espaldas con una mochila mirando al horizonte">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/wxQBZvxG/ourcommunity8.jpg" class="d-block w-100" alt="Hombre escalando una montaña con nuestra mochila de alpinismo">
+                <img src="https://i.postimg.cc/wxQBZvxG/ourcommunity8.jpg" loading="lazy" class="d-block w-100" alt="Hombre escalando una montaña con nuestra mochila de alpinismo">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/pTDd2Vfy/ourcommunity9.jpg" class="d-block w-100" alt="Mujer usando una mochila de nuestra linea urbana">
+                <img src="https://i.postimg.cc/pTDd2Vfy/ourcommunity9.jpg" loading="lazy" class="d-block w-100" alt="Mujer usando una mochila de nuestra linea urbana">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/L4tqSDDv/ourcommunity10.jpg" class="d-block w-100" alt="Hombre sentado en una escalera ordenando el contenido de una mochila de nuestra linea urbana">
+                <img src="https://i.postimg.cc/L4tqSDDv/ourcommunity10.jpg" loading="lazy" class="d-block w-100" alt="Hombre sentado en una escalera ordenando el contenido de una mochila de nuestra linea urbana">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/KjD45cjC/ourcommunity11.jpg" class="d-block w-100" alt="Hombre de espaldas usando una mochila de nuestra linea urbana">
+                <img src="https://i.postimg.cc/KjD45cjC/ourcommunity11.jpg" loading="lazy" class="d-block w-100" alt="Hombre de espaldas usando una mochila de nuestra linea urbana">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/50c0dQFZ/ourcommunity2.jpg" class="d-block w-100" alt="Mujer de espaldas mirando un lago usando una mochila de nuestra linea urbana">
+                <img src="https://i.postimg.cc/50c0dQFZ/ourcommunity2.jpg" loading="lazy" class="d-block w-100" alt="Mujer de espaldas mirando un lago usando una mochila de nuestra linea urbana">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <img src="https://i.postimg.cc/RFzMbrkm/icons8-chevron-left-96.png" class="carousel-control-prev-icon sliderIcon" aria-hidden="true" alt="Boton para retroceder a la imagen anterior">
+              <img src="https://i.postimg.cc/RFzMbrkm/icons8-chevron-left-96.png" loading="lazy" class="carousel-control-prev-icon sliderIcon" aria-hidden="true" alt="Boton para retroceder a la imagen anterior">
               <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <img src="https://i.postimg.cc/ZRFJG7md/icons8-chevron-right-96.png" class="carousel-control-next-icon sliderIcon" alt="Boton para retroceder a la imagen siguiente">
+              <img src="https://i.postimg.cc/ZRFJG7md/icons8-chevron-right-96.png" loading="lazy" class="carousel-control-next-icon sliderIcon" alt="Boton para retroceder a la imagen siguiente">
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-
-          
       </main>
 
     <footer>
-        <div class="footer">
+        <div class="hidden" id="footer">
             <p class="logoFooter">PANDORA</p>
             <p class="contactenos">Contact Us</p>
             <p class="mail">Email: esteban.altamura@gmail.com</p>
             <p class="twitter">Twitter: https://twitter.com/mura_andy_</p>
         </div>
     </footer>
+<script src="../assets/js/home.js" type="module"></script>     
 <script src="./assets/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

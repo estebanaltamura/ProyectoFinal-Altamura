@@ -3,7 +3,6 @@ import { getProducts } from "./getDataModule.js"
 export const productHelper = {
     productDomContentLoaded: async (e)=>{
         const productAndCollectionFounded = await productHelperPrivateMethods.getData(e)
-        productHelperPrivateMethods.showContentWhenDataisLoaded()
         productHelperPrivateMethods.productPrinting(productAndCollectionFounded[0])
     },
 
@@ -77,19 +76,22 @@ const productHelperPrivateMethods = {
            
             slideImage.className     = "d-block w-100"
             slideImage.setAttribute("src", element)
-            slideImage.setAttribute("alt", "alt a definir")
+            slideImage.setAttribute("alt", "a definir")
     
             slideContainer.appendChild(slideImage)
     
             fragment.appendChild(slideContainer)
         });
         
+        const carouselImage1 = fragment.childNodes[0].childNodes[0]
+        
+        carouselImage1.addEventListener("load", ()=>  productHelperPrivateMethods.showContentWhenDataisLoaded())
+        
         carouselInner.appendChild(fragment)
     },  
 
 
     addProductToLocalStorage: (productAndCollectionFounded)=>{
-        console.log(productAndCollectionFounded)
         localStorage.setItem("lastProductAdded", JSON.stringify({
             "idProduct"         : productAndCollectionFounded[0].id,
             "colectionName"     : productAndCollectionFounded[1],

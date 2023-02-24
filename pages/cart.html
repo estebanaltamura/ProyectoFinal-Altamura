@@ -60,32 +60,19 @@
 
     <div class="tenor-gif-embed loadingIcon" id="loadingIcon" data-postid="23067502" data-share-method="host" data-aspect-ratio="1" data-width="10%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>    
 
-    <div id="contenedorItems" class="contenedorItemsOff redondeado">
-        
-        <div id="itemHeader" class="itemHeader">
-            <span class="productNameHeaderCart">Product</span>
-            <span class="priceHeaderCart">Price</span>
-            <span class="quantityHeaderCart">Quantity</span>
-            <span class="subTotalHeaderCart">Sub Total</span>
-        </div>
-
-   
-
-        <div id="totalCart" class="totalCartContainer">
-            <span class="totalCartTitle">TOTAL</span>
-            <span class="totalCartNumber" id="totalCartNumber"></span>
-        </div>
+    <div id="contenedorItems" class="hidden">
+              
     </div>
 
     <a class="botonesCarro pagarConMPButtonOff" id="pagarConMPButton" href="./payment.html">
-        <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" class="mercadopagoicono" alt="">
+        <img src="https://i.postimg.cc/Xv5j8NDx/icono_mercadopago.png" class="hidden" id="MPicon" alt="">
         CONTINUE TO CHECKOUT
     </a>
-    <a class="botonesCarro seguirComprandoButtonSinItems" id="seguirComprandoButton">CONTINUE SHOPPING</a>
     
-
+    <a class="botonesCarro hidden" id="seguirComprandoButton">CONTINUE SHOPPING</a>
+    
     <footer>
-        <div class="footer">
+        <div class="hidden" id="footer">
             <p class="logoFooter">PANDORA</p>
             <p class="contactenos">Contact Us</p>
             <p class="mail">Email: esteban.altamura@gmail.com</p>

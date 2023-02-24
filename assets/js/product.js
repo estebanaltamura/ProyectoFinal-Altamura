@@ -1,6 +1,6 @@
 import { productHelper } from "./productHelper.js"
 
-document.addEventListener("DOMContentLoaded", async (e)=>{
+document.addEventListener("DOMContentLoaded", (e)=>{
     productHelper.productDomContentLoaded(e)
 })  
 
@@ -8,7 +8,7 @@ botonATC.addEventListener("click", (e)=>{
     productHelper.addToCartClicked(e)
 })
 
-botonComprar.addEventListener("click", async(e)=>{
+botonComprar.addEventListener("click", (e)=>{
     productHelper.buyItNowClicked(e)
 })
 

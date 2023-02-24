@@ -8,20 +8,24 @@ export const cartHelper = {
         lastProductAdded && cartHelperPrivateMethods.UpdateCartLocalStorage(lastProductAdded)
 
         const cartItemsAdded = cartHelperPrivateMethods.getCartItemsAdded()
-
+        
         if (cartHelperPrivateMethods.hasItems(cartItemsAdded)) {
+            
             cartHelperPrivateMethods.calcSubTotalPerItemCart(cartItemsAdded)
 
-            cartHelperPrivateMethods.calcTotalCart(cartItemsAdded)
-            
-            window.innerWidth >= 768 ?
+            if(window.innerWidth >= 768){
+                cartHelperPrivateMethods.cleanNodesChildrenOfContenedorItems()
+                cartHelperPrivateMethods.printItemHeaderDesktop()
                 cartHelperPrivateMethods.printItemsDesktop(cartItemsAdded)
-                                     :
+                cartHelperPrivateMethods.printTotalContainer(cartItemsAdded)                
+            }
+            else{
+                cartHelperPrivateMethods.cleanNodesChildrenOfContenedorItems()
                 cartHelperPrivateMethods.printItemsMobile(cartItemsAdded)
-
-
-            cartHelperPrivateMethods.showHideContenedorItems(cartHelperPrivateMethods.hasItems(cartItemsAdded))
+                cartHelperPrivateMethods.printTotalMobileContainer(cartItemsAdded)
+            }
         }
+        else cartHelperPrivateMethods.showContentWhenDataisLoaded(cartHelperPrivateMethods.hasItems(cartItemsAdded))
     },
 
     removeItemCart: (e)=>{
@@ -34,10 +38,8 @@ export const cartHelper = {
         cartHelperPrivateMethods.removeItemOfcartItemsAdded(cartItemsAdded, IndexIncartItemsAddedOfItemToRemove)
          
         cartHelperPrivateMethods.setcartItemsAdded(cartItemsAdded)
-        
-        cartHelperPrivateMethods.calcTotalCart(cartItemsAdded)
-    
-        cartHelperPrivateMethods.showHideContenedorItems(cartHelperPrivateMethods.hasItems(cartItemsAdded))
+            
+        cartHelperPrivateMethods.showContentWhenDataisLoaded(cartHelperPrivateMethods.hasItems(cartItemsAdded))
     },
 
     moreQuantityItemCart : (e) =>{
@@ -51,13 +53,18 @@ export const cartHelper = {
         
         cartHelperPrivateMethods.calcSubTotalPerItemCart(cartItemsAdded)
     
-        cartHelperPrivateMethods.calcTotalCart(cartItemsAdded)
-    
         if (cartHelperPrivateMethods.hasItems(cartItemsAdded)){
             if(window.innerWidth >= 768){
+                cartHelperPrivateMethods.cleanNodesChildrenOfContenedorItems()
+                cartHelperPrivateMethods.printItemHeaderDesktop()
                 cartHelperPrivateMethods.printItemsDesktop(cartItemsAdded)
+                cartHelperPrivateMethods.printTotalContainer(cartItemsAdded)    
             }
-            else cartHelperPrivateMethods.printItemsMobile(cartItemsAdded)
+            else{
+                cartHelperPrivateMethods.cleanNodesChildrenOfContenedorItems()
+                cartHelperPrivateMethods.printItemsMobile(cartItemsAdded)
+                cartHelperPrivateMethods.printTotalMobileContainer(cartItemsAdded)
+            }
         }
     },
 
@@ -75,23 +82,28 @@ export const cartHelper = {
             
             cartHelperPrivateMethods.setcartItemsAdded(cartItemsAdded)
             
-            cartHelperPrivateMethods.calcTotalCart(cartItemsAdded)
-            
-            cartHelperPrivateMethods.showHideContenedorItems(cartHelperPrivateMethods.hasItems(cartItemsAdded))
+            cartHelperPrivateMethods.showContentWhenDataisLoaded(cartHelperPrivateMethods.hasItems(cartItemsAdded))
            }
            else{
             cartHelperPrivateMethods.setcartItemsAdded(cartItemsAdded)
             
             cartHelperPrivateMethods.calcSubTotalPerItemCart(cartItemsAdded)
-                
-            cartHelperPrivateMethods.calcTotalCart(cartItemsAdded)
+                       
                 
             if (cartHelperPrivateMethods.hasItems(cartItemsAdded)){
                 if(window.innerWidth >= 768){
+                    cartHelperPrivateMethods.cleanNodesChildrenOfContenedorItems()
+                    cartHelperPrivateMethods.printItemHeaderDesktop()
                     cartHelperPrivateMethods.printItemsDesktop(cartItemsAdded)
+                    cartHelperPrivateMethods.printTotalContainer(cartItemsAdded)    
                 }
-                else cartHelperPrivateMethods.printItemsMobile(cartItemsAdded)
-            }        }
+                else{
+                    cartHelperPrivateMethods.cleanNodesChildrenOfContenedorItems()
+                    cartHelperPrivateMethods.printItemsMobile(cartItemsAdded)
+                    cartHelperPrivateMethods.printTotalMobileContainer(cartItemsAdded)
+                } 
+            }  
+        }
     },
 
     backToaConvenientPage : ()=> {
@@ -111,38 +123,44 @@ const cartHelperPrivateMethods = {
 
     //DOM
 
-    calcTotalCart : (cartItemsAdded)=>{
-        const totalCartNumber = document.getElementById("totalCartNumber")
-        totalCartNumber.textContent = `$ ${cartItemsAdded.reduce((acumulador, current)=> acumulador + (current.price*current.quantity), 0)}`
-    },
-
-    cartHeaderHide: (showHide)=>{
-        const cartHeader = document.getElementById("itemHeader")
-        showHide == true ? cartHeader.className = "itemHeader" : cartHeader.classList.replace("itemHeader", "hidden")
-    },
-
-    limpiarNodosItemClass : ()=>{
+    cleanNodesChildrenOfContenedorItems: ()=>{
         const contenedorItems = document.getElementById("contenedorItems")
-        
-        const elementsToRemove = [...document.getElementsByClassName("item"), ...document.getElementsByClassName("itemMobile")]
-        
-        if (elementsToRemove.length > 0){
-            elementsToRemove.forEach(element=>{
-                contenedorItems.removeChild(element)
-            })
-        }
+        contenedorItems.innerHTML= ""
     },
 
+    printItemHeaderDesktop: ()=>{
+        const contenedorItems       = document.getElementById("contenedorItems")
+        
+        const itemHeader            = document.createElement("DIV")
+        const productNameHeaderCart = document.createElement("SPAN")
+        const priceHeaderCart       = document.createElement("SPAN")
+        const quantityHeaderCart    = document.createElement("SPAN")
+        const subTotalHeaderCart    = document.createElement("SPAN")
+        
+        itemHeader.id= "itemHeader"
+        
+        itemHeader.className            = "itemHeader"
+        productNameHeaderCart.className = "productNameHeaderCart"
+        priceHeaderCart.className       = "priceHeaderCart"
+        quantityHeaderCart.className    = "quantityHeaderCart"
+        subTotalHeaderCart.className    = "subTotalHeaderCart"
+        
+        productNameHeaderCart.textContent = "Product"
+        priceHeaderCart.textContent       = "Price"
+        quantityHeaderCart.textContent    = "Quantity"
+        subTotalHeaderCart.textContent    = "Sub Total"
+        
+        itemHeader.append(productNameHeaderCart, priceHeaderCart, quantityHeaderCart, subTotalHeaderCart)
+        
+        contenedorItems.appendChild(itemHeader)
+    },
+    
     printItemsMobile: (cartItemsAdded)=> {
         const contenedorItems = document.getElementById("contenedorItems")
-        cartHelperPrivateMethods.limpiarNodosItemClass()
-        cartHelperPrivateMethods.cartHeaderHide(false)
-        cartHelperPrivateMethods.totalCartContainerClassSwitch()
-    
+                            
         cartItemsAdded.forEach((element) =>{
             const divItem               = document.createElement("DIV")
-    
-
+            
             const imagenCartItemimg     = document.createElement("IMG")
             const tituloCartItemSpan    = document.createElement("SPAN")
             const subTituloCartItemSpan = document.createElement("SPAN")
@@ -153,9 +171,9 @@ const cartHelperPrivateMethods = {
             const subTotalCartItemSpan  = document.createElement("SPAN")
             const removeIconMobile      = document.createElement("SPAN")
             const line                  = document.createElement("DIV")
-        
-            divItem.className              = "itemMobile"
-    
+                        
+            divItem.className               = "itemMobile"
+                
             imagenCartItemimg.className     = "imagenCartItem"
             tituloCartItemSpan.className    = "tituloCartItem"
             subTituloCartItemSpan.className = "subTituloCartItem"
@@ -166,12 +184,12 @@ const cartHelperPrivateMethods = {
             subTotalCartItemSpan.className  = "subTotalCartItem"
             removeIconMobile.className      = "removeIconMobile"
             line.className                  = "line"
-    
+                
             divItem.id              = element.idProduct
             moreQuantityIcon.id     = "moreQuantityIcon"
             lessQuantityIcon.id     = "lessQuantityIcon"
             removeIconMobile.id     = "removeIcon"
-    
+            
             imagenCartItemimg.setAttribute("src", element.mainImage)
 
             tituloCartItemSpan.textContent      = element.name
@@ -183,17 +201,18 @@ const cartHelperPrivateMethods = {
             
             subTotalCartItemSpan.textContent = `$ ${element.subtotal}`
             removeIconMobile.textContent = "Eliminar"
-    
+            
             divItem.append(imagenCartItemimg, tituloCartItemSpan, subTituloCartItemSpan, descripcion, quantityCartItemSpan, moreQuantityIcon, lessQuantityIcon, subTotalCartItemSpan, line, removeIconMobile)
-                  
-            contenedorItems.insertBefore(divItem, contenedorItems.children[1])
-        })
-    },
+            
+            imagenCartItemimg.addEventListener("load", ()=>  cartHelperPrivateMethods.showContentWhenDataisLoaded(cartHelperPrivateMethods.hasItems(cartItemsAdded)))
 
-    printItemsDesktop : (cartItemsAdded)=> {
-        const contenedorItems = document.getElementById("contenedorItems")
-        cartHelperPrivateMethods.limpiarNodosItemClass()
+            contenedorItems.appendChild(divItem)
+        }) 
+    },
     
+    printItemsDesktop: (cartItemsAdded)=> {
+        const contenedorItems = document.getElementById("contenedorItems")
+        
         cartItemsAdded.forEach((element) =>{
             const divItem               = document.createElement("DIV")
     
@@ -224,17 +243,59 @@ const cartHelperPrivateMethods = {
     
             imagenCartItemimg.setAttribute("src", element.mainImage)
             tituloCartItemSpan.textContent   = element.name
-            priceCartItemSpan.textContent    = element.price
+            priceCartItemSpan.textContent    = `$ ${element.price}`
             quantityCartItemSpan.textContent = element.quantity
-            moreQuantityIcon.setAttribute("src", "https://i.postimg.cc/pVC2k6qN/lessQuantityIcon.png")
-            lessQuantityIcon.setAttribute("src", "https://i.postimg.cc/Qd9h8xss/moreQuantityIcon.png")
-            subTotalCartItemSpan.textContent = element.subtotal 
+            lessQuantityIcon.setAttribute("src", "https://i.postimg.cc/pVC2k6qN/lessQuantityIcon.png")
+            moreQuantityIcon.setAttribute("src", "https://i.postimg.cc/Qd9h8xss/moreQuantityIcon.png")
+            subTotalCartItemSpan.textContent = `$ ${element.subtotal}` 
             removeIcon.setAttribute("src", "https://i.postimg.cc/prsRTmpV/icons8-multiply-64.png")
     
             divItem.append(imagenCartItemimg, tituloCartItemSpan, priceCartItemSpan, quantityCartItemSpan, moreQuantityIcon, lessQuantityIcon, subTotalCartItemSpan, removeIcon)
                   
             contenedorItems.insertBefore(divItem, contenedorItems.children[1])
+
+            imagenCartItemimg.addEventListener("load", ()=>  cartHelperPrivateMethods.showContentWhenDataisLoaded(cartHelperPrivateMethods.hasItems(cartItemsAdded)))
         })
+    },
+
+    printTotalMobileContainer: (cartItemsAdded)=> {
+        
+        const contenedorItems       = document.getElementById("contenedorItems")
+        const totalContainer        = document.createElement("DIV")
+        const totalCartTitle        = document.createElement("SPAN")
+        const totalCartNumber       = document.createElement("SPAN")
+
+        totalContainer.className        = "totalCartContainerMobile"
+        totalCartTitle.className        = "totalCartTitle"
+        totalCartNumber.className       = "totalCartNumber"
+
+        totalCartNumber.id      = "totalCartNumber"
+
+        totalCartNumber.textContent = `$ ${cartItemsAdded.reduce((acumulador, current)=> acumulador + (current.price*current.quantity), 0)}`
+
+        totalContainer.append(totalCartTitle, totalCartNumber)
+        
+        contenedorItems.appendChild(totalContainer)
+    },
+    
+    printTotalContainer: (cartItemsAdded)=> {
+        
+        const contenedorItems       = document.getElementById("contenedorItems")
+        const totalContainer        = document.createElement("DIV")
+        const totalCartTitle        = document.createElement("SPAN")
+        const totalCartNumber       = document.createElement("SPAN")
+
+        totalContainer.className        = "totalCartContainer"
+        totalCartTitle.className        = "totalCartTitle"
+        totalCartNumber.className       = "totalCartNumber"
+
+        totalCartNumber.id      = "totalCart"
+
+        totalCartNumber.textContent = `$ ${cartItemsAdded.reduce((acumulador, current)=> acumulador + (current.price*current.quantity), 0)}`
+
+        totalContainer.append(totalCartTitle, totalCartNumber)
+        
+        contenedorItems.appendChild(totalContainer)
     },
 
     removeNode : (idProductRemoveIconClicked)=> {
@@ -242,30 +303,34 @@ const cartHelperPrivateMethods = {
         elementToRemove.remove(elementToRemove)
     },
 
-    showHideContenedorItems : (hasItems)=>{
-        const contenedorItems = document.getElementById("contenedorItems")
-        const pagarConMPButton = document.getElementById("pagarConMPButton")
+    showContentWhenDataisLoaded : (hasItems)=>{
+        
+        const contenedorItems       = document.getElementById("contenedorItems")
+        const pagarConMPButton      = document.getElementById("pagarConMPButton")
+        const MPicon                = document.getElementById("MPicon")
         const seguirComprandoButton = document.getElementById("seguirComprandoButton")
-        const  loadingIcon      = document.getElementById("loadingIcon")
+        const loadingIcon           = document.getElementById("loadingIcon")
+        const footer                = document.getElementById("footer")
     
         if (hasItems){
-            contenedorItems.classList.replace("contenedorItemsOff","contenedorItems")
-            loadingIcon.classList.replace("loadingIcon", "loadingIconOff")
-            pagarConMPButton.classList.replace("pagarConMPButtonOff","pagarConMPButton")
-            seguirComprandoButton.classList.replace("seguirComprandoButtonSinItems", "seguirComprandoButtonConItems")
+            contenedorItems.classList.remove("hidden")
+            contenedorItems.classList.add("redondeado","contenedorItems") // redondeado
+            pagarConMPButton.classList.replace("pagarConMPButtonOff", "pagarConMPButton")
+            MPicon.classList.replace("hidden","mercadopagoicono")
+            loadingIcon.classList.replace("loadingIcon", "hidden")
+            seguirComprandoButton.classList.replace("hidden", "seguirComprandoButtonConItems")
+            footer.classList.replace("hidden", "footer")
         }
         else{
-            contenedorItems.classList.replace("contenedorItems","contenedorItemsOff")
-            pagarConMPButton.classList.replace("pagarConMPButton", "pagarConMPButtonOff")
-            seguirComprandoButton.classList.replace("seguirComprandoButtonConItems", "seguirComprandoButtonSinItems")
+            contenedorItems.classList.replace("contenedorItems","hidden")
+            loadingIcon.classList.replace("loadingIcon", "hidden") 
+            pagarConMPButton.classList.replace("pagarConMPButtonOff", "hidden")
+            MPicon.classList.replace("mercadopagoicono","hidden")
+            seguirComprandoButton.classList.replace("hidden", "seguirComprandoButtonSinItems")
+            footer.classList.replace("hidden", "footer")
         }
     },
-
-    totalCartContainerClassSwitch: ()=>{
-        const totalCart = document.getElementById("totalCart")
-        totalCart.className = "totalCartContainerMobile"
-    },
-
+    
     //LOCAL STORAGE
     addQuantityItemInItemsAdded : (cartItemsAdded, IndexIncartItemsAddedofMoreQuantity)=> ++cartItemsAdded[IndexIncartItemsAddedofMoreQuantity].quantity,
     
@@ -290,8 +355,6 @@ const cartHelperPrivateMethods = {
     removeItemOfcartItemsAdded : (cartItemsAdded, IndexIncartItemsAddedOfItemToRemove)=> cartItemsAdded.splice(IndexIncartItemsAddedOfItemToRemove, 1),
 
     restoreQuantityItemInItemsAdded : (cartItemsAdded, IndexIncartItemsAddedofMoreQuantity)=> --cartItemsAdded[IndexIncartItemsAddedofMoreQuantity].quantity,
-    
-    removeInfoToProductPago : ()=> localStorage.removeItem("infoToProductPage"),
     
     setcartItemsAdded : (cartItemsAdded)=> localStorage.setItem("cartItemsAdded", JSON.stringify(cartItemsAdded)),
 
@@ -328,7 +391,7 @@ const cartHelperPrivateMethods = {
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
           background: "grey",
-          width: "100%",
+          width: "500px",
           height: "45"
 
         },
