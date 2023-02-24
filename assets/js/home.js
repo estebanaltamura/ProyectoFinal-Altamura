@@ -2,7 +2,7 @@ const contenedorMain = document.getElementById("contenedorMain")
 const footer = document.getElementById("footer")
 const loadingIcon = document.getElementById("loadingIcon")
 
-document.addEventListener("DOMContentLoaded", ()=>showHome())
+window.addEventListener("load", ()=>showHome())
 
 const showHome = ()=>{
         contenedorMain.className    == "hidden" && contenedorMain.classList.replace("hidden","contenedorMain")
